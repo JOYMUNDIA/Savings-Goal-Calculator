@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 /* General reset */
 * {
     margin: 0;
@@ -375,6 +376,10 @@ body {
     background-position: right;
 }
 
+.card .card-calculate-btn a{
+    text-decoration: none;
+}
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -512,5 +517,619 @@ footer .button:hover .inner::before {
 
     footer p {
         font-size: 0.9rem;
+    }
+}
+
+/* Calculator Options Form Styling*/
+/* General Layout */
+
+#inputform{
+    display: flex; 
+}
+
+.form-parent-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overflow-x: hidden;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 39rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color:rgba(235, 236, 240, 0.62);
+}
+
+.form-container h1 {
+    font-size: 1.8rem;
+    color: #646262;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.form-fields-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 1.5%;
+    padding-bottom: 1rem;
+}
+
+.form-field .form-label-compartment-parent {
+    width: 35%;
+    align-items: left;
+}
+
+.form-field .form-label-compartment{
+    width: 100%;
+}
+
+.form-field .form-label-compartment h3{
+    text-align: left;
+    font-size: 1.05rem;
+    color: #4e4d4d;
+    font-weight: 500;
+}
+
+.form-field .form-input-compartment-parent{
+    width: 63.5%;
+    align-items: left;
+}
+
+
+/* Styles for input field */
+
+.form-field .form-input-compartment {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 1.05rem;
+}
+
+.form-field #custom-purpose{
+    width: 100%;
+}
+
+.form-field #custom-purpose #custom-purpose-input{
+    width: 80%;
+}
+
+.form-field .form-input-compartment input, #custom-purpose-input {
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    border-radius: 20rem;
+    padding: 1rem;
+    background-color: #EBECF0;
+    text-shadow: 1px 1px 0 #FFF;
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    width: 80%;
+    align-items: left;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-field .form-input-compartment input:focus {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.form-field .form-input-compartment #custom-purpose-input:focus{
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.form-field .form-input-compartment .duration{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.form-field .form-input-compartment-parent #custom-purpose input {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+
+/* Styles for Select Drop down */
+
+.form-field .form-input-compartment-parent .select-container{
+    width: 80%;
+    position: relative;
+}
+
+.form-field .form-input-compartment-parent select{
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 0.9rem;
+    border-radius: 20rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    text-shadow: 1px 1px 0 #FFF;
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    align-items: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-field .form-input-compartment-parent .select-container::after{
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: black;
+    pointer-events: none;
+}
+
+
+
+/* Styles for Amount field */
+
+.form-field .form-input-compartment-parent .target-amount-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+    gap: 0.5rem;
+}
+
+.clear-btn {
+    cursor: pointer;
+    /*margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f1f1f1;*/
+    border: 1px solid #cccccc;
+    background-image: linear-gradient(to top, #d8d9dbde 0%, #fff 80%, #FDFDFD 100%);
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 0.9rem;
+    border-radius: 20rem;
+    padding: 0.5rem;
+    text-shadow: 1px 1px 0 #FFF;
+    box-shadow: inset 2px 2px 5px #a1a2a7e3, inset -5px -5px 10px #FFF;
+    align-items: left;
+}
+
+.amount-disclaimer{
+    font-size: 0.8rem;
+    color: #464646;
+}
+
+#editable-text {
+    font-size: 14px;
+    color: #707070;
+}
+
+/* Radio Buttons for Compunding Frequency */
+.form-field .form-input-compartment-parent .radio-compound{
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.form-field .form-input-compartment-parent .radio-compound .column1{
+    width: 42%;
+}
+
+.form-field .form-input-compartment-parent .radio-compound .column2{
+    width: 58%;
+}
+
+.form-field .form-input-compartment-parent .radio-compound .radio-compund-option{
+    display: flex;
+    width: 100%;
+    justify-content: 100%;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.form-field .form-input-compartment-parent .radio-compound .radio-compund-option stylish-radio-btn, .form-field .form-input-compartment-parent .radio-compound .radio-compund-option h3{
+    width: 50%;
+}
+
+.form-field .form-input-compartment-parent .radio-compound h3{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #FFF;
+    font-weight: 450;
+    color:rgb(5, 5, 5)
+}
+
+.form-field .form-input-compartment-parent .radio-compound .stylish-radio-btn{
+    background: linear-gradient(145deg, hsl(0, 0%, 99%), hsla(0, 0.00%, 69.00%, 0.82));
+    border: 5.5px solid hsl(0, 0%, 84%);
+    box-shadow: 10px 10px 17px hsla(0, 0.00%, 69.00%, 0.82),
+                -10px -10px 17px varhsl(0, 0%, 99%);
+    display: grid;
+    border-radius: 30px;
+    position: relative;
+}
+
+.form-field .form-input-compartment-parent .radio-compound input[type="radio"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: none;
+    background: transparent;
+    box-shadow: inset -2px -2px 4px hsla(0, 0.00%, 69.00%, 0.82),
+                inset 2px 2px 4px hsl(0, 0%, 99%);
+    margin: 0;
+    outline: none;
+    z-index: 3;
+    border-radius: 3.75rem;
+}
+
+.form-field .form-input-compartment-parent .radio-compound input[type="radio"]:checked{
+    background: transparent;
+    box-shadow: inset 2px 2px 4px hsla(0, 0.00%, 69.00%, 0.82),
+                inset -2px -2px 4px hsl(0, 0%, 99%);
+}
+
+
+.form-field .form-input-compartment-parent .radio-compound .stylish-radio-btn i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -o-transform: translate(-50%, -50%);
+    color: #034868;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.form-field .form-input-compartment-parent .radio-compound input[type="radio"]:checked + i.fas.fa-circle{
+    opacity: 1;
+}
+
+
+/* Form Buttons, Calculate and Back */
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.form-actions .back-button {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem 1.8rem;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+}
+
+.form-actions .back-button:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.form-actions .back-button:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.form-actions .calculate-button {
+    position: relative;
+    cursor: pointer;
+    padding: 1rem 1.8rem;
+    border: 1px solid black;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 1px 1px #000;
+    box-shadow:
+      inset 0px 4px 4px -3px #fff0,
+      inset 0px -3px 4px -3px #fff;
+    background: linear-gradient(#ddd, #999 25%, #000 75%);
+    isolation: isolate;
+    transition:
+      0.25s all,
+      0.1s background-position;
+      overflow: hidden;
+}
+  
+.form-actions .calculate-button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(circle at 50% 150%, #48b9ef, #0000 50%);
+    background-size: 300% 50%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: inherit;
+}
+  
+.form-actions .calculate-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(circle at 50% 320%, #48b9ef, #0000 50%);
+    background-size: 300% 50%;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: inherit;
+}
+  
+.form-actions .calculate-button:hover {
+    box-shadow:
+      inset 0px 4px 4px -3px #fff5,
+      inset 0px -3px 4px -3px #fff;
+}
+
+.form-actions .calculate-button:hover::before,
+.form-actions .calculate-button:hover::after {
+    opacity: 1;
+}
+  
+.form-actions .calculate-button:active::before,
+.form-actions .calculate-button:active::after {
+    opacity: 0;
+}
+  
+.form-actions .calculate-button:active {
+    box-shadow:
+      inset 0px 4px 4px -3px #000,
+      inset 0px -4px 4px -3px #000c,
+      inset 0px 0px 24px -3px #000a;
+    background-position: 1px 1px;
+}
+  
+.form-actions .calculate-button div {
+    transition: 0.1s translate;
+}
+  
+.form-actions .calculate-button:active div {
+    translate: 1px 1px;
+}
+  
+
+@media (max-width: 768px) {
+    .form-fields-container{
+        gap: 1.7rem;
+    }
+
+    .form-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-field .form-label-compartment-parent,
+    .form-field .form-input-compartment-parent {
+        width: 100%;
+    }
+}
+
+/* Form Results styling */
+#resultsoutput{
+    display: none;
+}
+
+.form-results {
+    margin: 0;
+    background-color: #eaeaea;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+}
+
+.form-result {
+    max-width: 39rem;
+    width: 100%;
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-result header {
+    background-image: url('images/hero_background.jpg');
+    color: #fff;
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-result header .form-result__title {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.form-result header .form-result__title span {
+    display: block;
+}
+
+.form-result header .form-result__title--top {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.form-result header .form-result__title--bottom {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 3.55px;
+    opacity: 0.65;
+}
+
+.form-result__profiles {
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    padding: 15px 15px 20px;
+    display: grid;
+    row-gap: 8px;
+}
+
+.form-result__profile {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    align-items: center;
+    padding: 10px 30px 10px 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+    background-color: #fff;
+}
+
+.form-result__profile:hover {
+    transform: scale(1.2);
+    box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
+
+.form-result__name {
+    color: #01176de7;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.64px;
+    margin-left: 12px;
+}
+
+.form-result__value {
+    color: #151616;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-left: 60px;
+}
+
+.answer{
+    color: #ab07b1;
+    font-weight: 900;
+    font-size: 1.55rem;
+}
+
+.form-result {
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* Form result Buttons */
+.form-result-btns {
+    padding: 2rem 2rem;
+    width: 100vw;
+    height: auto;
+    background-color: #eaeaea;
+    display: flex;
+    flex-direction: column; /* Stack the columns vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.form-result-btns-col1, .form-result-btns-col2 {
+    display: flex; /* Align buttons in a row */
+    justify-content: space-between; /* Spread buttons evenly */
+    align-items: center; /* Ensure the buttons are centered */
+    margin-bottom: 1.5em; /* Space between the two columns */
+}
+
+.form-result-btns button {
+    overflow: hidden;
+    margin: 0 1em; /* Space between buttons */
+    border: none;
+    padding: 0;
+    width: 20vw; /* Use viewport width for proportional width */
+    height: 2.5em; /* Keep the height in 'em' for consistency */
+    border-radius: 0.3125em; /* Calculated as 0.125 * 2.5em */
+    --dy: 0px;
+    transform: translatey(var(--dy));
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background: linear-gradient(#eaebf1, #b1b7c9);
+    
+    /* Font size proportional to button height */
+    font: 1.2em/2.5em Roboto; /* Scales font size proportionally */
+    
+    color: #fff;
+    text-transform: uppercase;
+    filter: grayscale(0.85) contrast(0.85);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.form-result-btns button.invert {
+    color: #000;
+}
+
+.form-result-btns button:focus,
+.form-result-btns button:hover {
+    outline: none;
+    filter: none;
+}
+
+.form-result-btns button:active {
+    --dy: 0.3125em; /* Calculated as 0.125 * button-r */
+}
+
+.form-result-btns button[data-icon] {
+    width: 16vw + 2 * 0.625em; /* Adjust width for icon size based on screen size */
+    border-radius: 0.5 * 0.3125em; /* Calculated as 0.5 * button-r */
+}
+
+.form-result-btns button[data-icon]:before {
+    float: left;
+    width: 2.5em; /* Keep the icon width in 'em' for consistency */
+    box-shadow: var(--in-sh);
+    background: linear-gradient(#3a3e40, #393d40);
+    content: attr(data-icon);
+
+    /* Clip path to create the icon shape */
+    @supports (clip-path: circle(5px)) {
+        padding-right: 0.625em; /* Calculated as icon-pad */
+        clip-path: polygon(0 0, 2.5em 0, 2.5em 29%, 100% 50%, 2.5em calc(100% - 29%), 2.5em 100%, 0 100%);
+    }
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .form-result-btns button {
+        width: 40vw; /* Adjusted to 15vw for more moderate scaling */
+        font-size: 1.1em; /* Slightly reduced font size */
+    }
+
+    .form-result-btns button[data-icon] {
+        width: 36vw + 2 * 0.625em; /* Adjust icon width for smaller screen */
     }
 }

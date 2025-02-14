@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Dropdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        option {
+            padding: 10px;
+        }
+
+        .dropdown-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .currency-symbol{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select a Currency</h2>
+    <select id="currency-dropdown">
+
+        <!-- Afghan Afghani -->
+        <option value="AFN" class="dropdown-option">
+            Afghan Afghani (AFN) - 
+            <span class="currency-symbol">
+                ؋
+            </span>
+        </option>
+
+        <!-- Albanian Lek -->
+        <option value="ALL" class="dropdown-option">
+            Albanian Lek (ALL) - 
+            <span class="currency-symbol">
+                L
+            </span>
+        </option>
+
+        <!-- Algerian Dinar -->
+        <option value="DZD" class="dropdown-option">
+            Algerian Dinar (DZD) - 
+            <span class="currency-symbol">
+                د.ج
+            </span>
+        </option>
+
+        <!-- Andorran Peseta -->
+        <option value="ADP" class="dropdown-option">
+            Andorran Peseta (ADP) - 
+            <span class="currency-symbol">
+                pt
+            </span>
+        </option>
+
+        <!-- Angolan Kwanza -->
+        <option value="AOA" class="dropdown-option">
+            Angolan Kwanza (AOA) - 
+            <span class="currency-symbol">
+                Kz
+            </span>
+        </option>
+
+        <!-- East Caribbean Dollar -->
+        <option value="XCD" class="dropdown-option">
+            East Caribbean Dollar (XCD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Argentine Peso -->
+        <option value="ARS" class="dropdown-option">
+            Argentine Peso (ARS) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Armenian Dram -->
+        <option value="AMD" class="dropdown-option">
+            Armenian Dram (AMD) - 
+            <span class="currency-symbol">
+                ֏
+            </span>
+        </option>
+
+        <!-- Aruban Florin -->
+        <option value="AWG" class="dropdown-option">
+            Aruban Florin (AWG) - 
+            <span class="currency-symbol">
+                ƒ
+            </span>
+        </option>
+
+        <!-- Australian Dollar -->
+        <option value="AUD" class="dropdown-option">
+            Australian Dollar (AUD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Azerbaijani Manat -->
+        <option value="AZN" class="dropdown-option">
+            Azerbaijani Manat (AZN) - 
+            <span class="currency-symbol">
+                ₼
+            </span>
+        </option>
+
+        <!-- Bahamian Dollar -->
+        <option value="BSD" class="dropdown-option">
+            Bahamian Dollar (BSD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Bahraini Dinar -->
+        <option value="BHD" class="dropdown-option">
+            Bahraini Dinar (BHD) - 
+            <span class="currency-symbol">
+                د.ب
+            </span>
+        </option>
+
+        <!-- Bangladeshi Taka -->
+        <option value="BDT" class="dropdown-option">
+            Bangladeshi Taka (BDT) - 
+            <span class="currency-symbol">
+                ৳
+            </span>
+        </option>
+
+        <!-- Barbadian Dollar -->
+        <option value="BBD" class="dropdown-option">
+            Barbadian Dollar (BBD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Belarusian Ruble -->
+        <option value="BYN" class="dropdown-option">
+            Belarusian Ruble (BYN) - 
+            <span class="currency-symbol">
+                Br
+            </span>
+        </option>
+
+        <!-- Belize Dollar -->
+        <option value="BZD" class="dropdown-option">
+            Belize Dollar (BZD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Bermudian Dollar -->
+        <option value="BMD" class="dropdown-option">
+            Bermudian Dollar (BMD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Bhutanese Ngultrum -->
+        <option value="BTN" class="dropdown-option">
+            Bhutanese Ngultrum (BTN) - 
+            <span class="currency-symbol">
+                Nu.
+            </span>
+        </option>
+
+        <!-- Bolivian Boliviano -->
+        <option value="BOB" class="dropdown-option">
+            Bolivian Boliviano (BOB) - 
+            <span class="currency-symbol">
+                Bs
+            </span>
+        </option>
+
+        <!-- Bosnia and Herzegovina Convertible Mark -->
+        <option value="BAM" class="dropdown-option">
+            Bosnia and Herzegovina Convertible Mark (BAM) - 
+            <span class="currency-symbol">
+                KM
+            </span>
+        </option>
+
+        <!-- Botswanan Pula -->
+        <option value="BWP" class="dropdown-option">
+            Botswanan Pula (BWP) - 
+            <span class="currency-symbol">
+                P
+            </span>
+        </option>
+
+        <!-- Brazilian Real -->
+        <option value="BRL" class="dropdown-option">
+            Brazilian Real (BRL) - 
+            <span class="currency-symbol">
+                R$
+            </span>
+        </option>
+
+        <!-- British Pound Sterling -->
+        <option value="GBP" class="dropdown-option">
+            British Pound Sterling (GBP) - 
+            <span class="currency-symbol">
+                £
+            </span>
+        </option>
+
+        <!-- Brunei Dollar -->
+        <option value="BND" class="dropdown-option">
+            Brunei Dollar (BND) - 
+            <span class="currency-symbol">
+                B$
+            </span>
+        </option>
+
+        <!-- Bulgarian Lev -->
+        <option value="BGN" class="dropdown-option">
+            Bulgarian Lev (BGN) - 
+            <span class="currency-symbol">
+                лв
+            </span>
+        </option>
+
+        <!-- Burundian Franc -->
+        <option value="BIF" class="dropdown-option">
+            Burundian Franc (BIF) - 
+            <span class="currency-symbol">
+                FBu
+            </span>
+        </option>
+
+        <!-- Cabo Verdean Escudo -->
+        <option value="CVE" class="dropdown-option">
+            Cabo Verdean Escudo (CVE) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Cambodian Riel -->
+        <option value="KHR" class="dropdown-option">
+            Cambodian Riel (KHR) - 
+            <span class="currency-symbol">
+                ៛
+            </span>
+        </option>
+
+        <!-- Canadian Dollar -->
+        <option value="CAD" class="dropdown-option">
+            Canadian Dollar (CAD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Central African CFA Franc -->
+        <option value="XAF" class="dropdown-option">
+            Central African CFA Franc (XAF) - 
+            <span class="currency-symbol">
+                CFA
+            </span>
+        </option>
+
+        <!-- Chilean Peso -->
+        <option value="CLP" class="dropdown-option">
+            Chilean Peso (CLP) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Chinese Yuan -->
+        <option value="CNY" class="dropdown-option">
+            Chinese Yuan (CNY) - 
+            <span class="currency-symbol">
+                ¥
+            </span>
+        </option>
+
+
+        <!-- Colombian Peso -->
+        <option value="COP" class="dropdown-option">
+            Colombian Peso (COP) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Comorian Franc -->
+        <option value="KMF" class="dropdown-option">
+            Comorian Franc (KMF) - 
+            <span class="currency-symbol">
+                CF
+            </span>
+        </option>
+
+        <!-- Congolese Franc -->
+        <option value="CDF" class="dropdown-option">
+            Congolese Franc (CDF) - 
+            <span class="currency-symbol">
+                FC
+            </span>
+        </option>
+
+        <!-- Costa Rican Colón -->
+        <option value="CRC" class="dropdown-option">
+            Costa Rican Colón (CRC) - 
+            <span class="currency-symbol">
+                ₡
+            </span>
+        </option>
+
+        <!-- Croatian Kuna -->
+        <option value="HRK" class="dropdown-option">
+            Croatian Kuna (HRK) - 
+            <span class="currency-symbol">
+                kn
+            </span>
+        </option>
+
+        <!-- Cuban Peso -->
+        <option value="CUP" class="dropdown-option">
+            Cuban Peso (CUP) - 
+            <span class="currency-symbol">
+                ₱
+            </span>
+        </option>
+
+        <!-- Czech Koruna -->
+        <option value="CZK" class="dropdown-option">
+            Czech Koruna (CZK) - 
+            <span class="currency-symbol">
+                Kč
+            </span>
+        </option>
+
+        <!-- Danish Krone -->
+        <option value="DKK" class="dropdown-option">
+            Danish Krone (DKK) - 
+            <span class="currency-symbol">
+                kr
+            </span>
+        </option>
+
+        <!-- Djiboutian Franc -->
+        <option value="DJF" class="dropdown-option">
+            Djiboutian Franc (DJF) - 
+            <span class="currency-symbol">
+                Fdj
+            </span>
+        </option>
+
+        <!-- Dominican Peso -->
+        <option value="DOP" class="dropdown-option">
+            Dominican Peso (DOP) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- East Caribbean Dollar -->
+        <option value="XCD" class="dropdown-option">
+            East Caribbean Dollar (XCD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Egyptian Pound -->
+        <option value="EGP" class="dropdown-option">
+            Egyptian Pound (EGP) - 
+            <span class="currency-symbol">
+                ج.م
+            </span>
+        </option>
+
+        <!-- El Salvadoran Colón -->
+        <option value="SVC" class="dropdown-option">
+            El Salvadoran Colón (SVC) - 
+            <span class="currency-symbol">
+                ₡
+            </span>
+        </option>
+
+        <!-- Equatorial Guinean Ekwele -->
+        <option value="GNF" class="dropdown-option">
+            Equatorial Guinean Ekwele (GNF) - 
+            <span class="currency-symbol">
+                FCFA
+            </span>
+        </option>
+
+        <!-- Eritrean Nakfa -->
+        <option value="ERN" class="dropdown-option">
+            Eritrean Nakfa (ERN) - 
+            <span class="currency-symbol">
+                Nfk
+            </span>
+        </option>
+
+        <!-- Estonian Kroon -->
+        <option value="EEK" class="dropdown-option">
+            Estonian Kroon (EEK) - 
+            <span class="currency-symbol">
+                kr
+            </span>
+        </option>
+
+        <!-- Ethiopian Birr -->
+        <option value="ETB" class="dropdown-option">
+            Ethiopian Birr (ETB) - 
+            <span class="currency-symbol">
+                Br
+            </span>
+        </option>
+
+        <!-- Euro -->
+        <option value="EUR" class="dropdown-option">
+            Euro (EUR) - 
+            <span class="currency-symbol">
+                €
+            </span>
+        </option>
+
+        <!-- Falkland Islands Pound -->
+        <option value="FKP" class="dropdown-option">
+            Falkland Islands Pound (FKP) - 
+            <span class="currency-symbol">
+                £
+            </span>
+        </option>
+
+        <!-- Fijian Dollar -->
+        <option value="FJD" class="dropdown-option">
+            Fijian Dollar (FJD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Finnish Markka -->
+        <option value="FIM" class="dropdown-option">
+            Finnish Markka (FIM) - 
+            <span class="currency-symbol">
+                mk
+            </span>
+        </option>
+
+        <!-- Gambian Dalasi -->
+        <option value="GMD" class="dropdown-option">
+            Gambian Dalasi (GMD) - 
+            <span class="currency-symbol">
+                D
+            </span>
+        </option>
+
+        <!-- Georgian Lari -->
+        <option value="GEL" class="dropdown-option">
+            Georgian Lari (GEL) - 
+            <span class="currency-symbol">
+                ₾
+            </span>
+        </option>
+
+        <!-- Ghanaian Cedi -->
+        <option value="GHS" class="dropdown-option">
+            Ghanaian Cedi (GHS) - 
+            <span class="currency-symbol">
+                ₵
+            </span>
+        </option>
+
+        <!-- Gibraltar Pound -->
+        <option value="GIP" class="dropdown-option">
+            Gibraltar Pound (GIP) - 
+            <span class="currency-symbol">
+                £
+            </span>
+        </option>
+
+        <!-- Guatemalan Quetzal -->
+        <option value="GTQ" class="dropdown-option">
+            Guatemalan Quetzal (GTQ) - 
+            <span class="currency-symbol">
+                Q
+            </span>
+        </option>
+
+        <!-- Guinean Franc -->
+        <option value="GNF" class="dropdown-option">
+            Guinean Franc (GNF) - 
+            <span class="currency-symbol">
+                FG
+            </span>
+        </option>
+
+        <!-- Guyanese Dollar -->
+        <option value="GYD" class="dropdown-option">
+            Guyanese Dollar (GYD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Haitian Gourde -->
+        <option value="HTG" class="dropdown-option">
+            Haitian Gourde (HTG) - 
+            <span class="currency-symbol">
+                G
+            </span>
+        </option>
+
+        <!-- Honduran Lempira -->
+        <option value="HNL" class="dropdown-option">
+            Honduran Lempira (HNL) - 
+            <span class="currency-symbol">
+                L
+            </span>
+        </option>
+
+
+        <!-- Hong Kong Dollar -->
+        <option value="HKD" class="dropdown-option">
+            Hong Kong Dollar (HKD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Hungarian Forint -->
+        <option value="HUF" class="dropdown-option">
+            Hungarian Forint (HUF) - 
+            <span class="currency-symbol">
+                Ft
+            </span>
+        </option>
+
+        <!-- Icelandic Króna -->
+        <option value="ISK" class="dropdown-option">
+            Icelandic Króna (ISK) - 
+            <span class="currency-symbol">
+                kr
+            </span>
+        </option>
+
+        <!-- Indian Rupee -->
+        <option value="INR" class="dropdown-option">
+            Indian Rupee (INR) - 
+            <span class="currency-symbol">
+                ₹
+            </span>
+        </option>
+
+        <!-- Indonesian Rupiah -->
+        <option value="IDR" class="dropdown-option">
+            Indonesian Rupiah (IDR) - 
+            <span class="currency-symbol">
+                Rp
+            </span>
+        </option>
+
+        <!-- Iranian Rial -->
+        <option value="IRR" class="dropdown-option">
+            Iranian Rial (IRR) - 
+            <span class="currency-symbol">
+                ﷼
+            </span>
+        </option>
+
+        <!-- Iraqi Dinar -->
+        <option value="IQD" class="dropdown-option">
+            Iraqi Dinar (IQD) - 
+            <span class="currency-symbol">
+                ع.د
+            </span>
+        </option>
+
+        <!-- Israeli New Shekel -->
+        <option value="ILS" class="dropdown-option">
+            Israeli New Shekel (ILS) - 
+            <span class="currency-symbol">
+                ₪
+            </span>
+        </option>
+
+        <!-- Jamaican Dollar -->
+        <option value="JMD" class="dropdown-option">
+            Jamaican Dollar (JMD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Japanese Yen -->
+        <option value="JPY" class="dropdown-option">
+            Japanese Yen (JPY) - 
+            <span class="currency-symbol">
+                ¥
+            </span>
+        </option>
+
+        <!-- Jordanian Dinar -->
+        <option value="JOD" class="dropdown-option">
+            Jordanian Dinar (JOD) - 
+            <span class="currency-symbol">
+                د.أ
+            </span>
+        </option>
+
+        <!-- Kazakhstani Tenge -->
+        <option value="KZT" class="dropdown-option">
+            Kazakhstani Tenge (KZT) - 
+            <span class="currency-symbol">
+                ₸
+            </span>
+        </option>
+
+        <!-- Kenyan Shilling -->
+        <option value="KES" class="dropdown-option">
+            Kenyan Shilling (KES) - 
+            <span class="currency-symbol">
+                KSh
+            </span>
+        </option>
+
+        <!-- Kiribati Dollar -->
+        <option value="AUD" class="dropdown-option">
+            Kiribati Dollar (AUD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Kuwaiti Dinar -->
+        <option value="KWD" class="dropdown-option">
+            Kuwaiti Dinar (KWD) - 
+            <span class="currency-symbol">
+                د.ك
+            </span>
+        </option>
+
+        <!-- Kyrgyzstani Som -->
+        <option value="KGS" class="dropdown-option">
+            Kyrgyzstani Som (KGS) - 
+            <span class="currency-symbol">
+                сом
+            </span>
+        </option>
+
+        <!-- Laotian Kip -->
+        <option value="LAK" class="dropdown-option">
+            Laotian Kip (LAK) - 
+            <span class="currency-symbol">
+                ₭
+            </span>
+        </option>
+
+        <!-- Latvian Lats -->
+        <option value="LVL" class="dropdown-option">
+            Latvian Lats (LVL) - 
+            <span class="currency-symbol">
+                Ls
+            </span>
+        </option>
+
+        <!-- Lebanese Pound -->
+        <option value="LBP" class="dropdown-option">
+            Lebanese Pound (LBP) - 
+            <span class="currency-symbol">
+                ل.ل
+            </span>
+        </option>
+
+        <!-- Lesotho Loti -->
+        <option value="LSL" class="dropdown-option">
+            Lesotho Loti (LSL) - 
+            <span class="currency-symbol">
+                M
+            </span>
+        </option>
+
+        <!-- Liberian Dollar -->
+        <option value="LRD" class="dropdown-option">
+            Liberian Dollar (LRD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Libyan Dinar -->
+        <option value="LYD" class="dropdown-option">
+            Libyan Dinar (LYD) - 
+            <span class="currency-symbol">
+                ل.د
+            </span>
+        </option>
+
+        <!-- Lithuanian Litas -->
+        <option value="LTL" class="dropdown-option">
+            Lithuanian Litas (LTL) - 
+            <span class="currency-symbol">
+                Lt
+            </span>
+        </option>
+
+        <!-- Luxembourgish Franc -->
+        <option value="LUF" class="dropdown-option">
+            Luxembourgish Franc (LUF) - 
+            <span class="currency-symbol">
+                ₣
+            </span>
+        </option>
+
+        <!-- Macau Pataca -->
+        <option value="MOP" class="dropdown-option">
+            Macau Pataca (MOP) - 
+            <span class="currency-symbol">
+                P
+            </span>
+        </option>
+
+        <!-- Macedonian Denar -->
+        <option value="MKD" class="dropdown-option">
+            Macedonian Denar (MKD) - 
+            <span class="currency-symbol">
+                ден
+            </span>
+        </option>
+
+        <!-- Malagasy Ariary -->
+        <option value="MGA" class="dropdown-option">
+            Malagasy Ariary (MGA) - 
+            <span class="currency-symbol">
+                Ar
+            </span>
+        </option>
+
+        <!-- Malawian Kwacha -->
+        <option value="MWK" class="dropdown-option">
+            Malawian Kwacha (MWK) - 
+            <span class="currency-symbol">
+                K
+            </span>
+        </option>
+
+        <!-- Malaysian Ringgit -->
+        <option value="MYR" class="dropdown-option">
+            Malaysian Ringgit (MYR) - 
+            <span class="currency-symbol">
+                RM
+            </span>
+        </option>
+
+        <!-- Maldivian Rufiyaa -->
+        <option value="MVR" class="dropdown-option">
+            Maldivian Rufiyaa (MVR) - 
+            <span class="currency-symbol">
+                Rf
+            </span>
+        </option>
+
+
+        <!-- Mauritian Rupee -->
+        <option value="MUR" class="dropdown-option">
+            Mauritian Rupee (MUR) - 
+            <span class="currency-symbol">
+                ₨
+            </span>
+        </option>
+
+        <!-- Mexican Peso -->
+        <option value="MXN" class="dropdown-option">
+            Mexican Peso (MXN) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+
+        <!-- Moldovan Leu -->
+        <option value="MDL" class="dropdown-option">
+            Moldovan Leu (MDL) - 
+            <span class="currency-symbol">
+                lei
+            </span>
+        </option>
+
+        <!-- Mongolian Tugrik -->
+        <option value="MNT" class="dropdown-option">
+            Mongolian Tugrik (MNT) - 
+            <span class="currency-symbol">
+                ₮
+            </span>
+        </option>
+
+
+        <!-- Moroccan Dirham -->
+        <option value="MAD" class="dropdown-option">
+            Moroccan Dirham (MAD) - 
+            <span class="currency-symbol">
+                د.م.
+            </span>
+        </option>
+
+        <!-- Mozambican Metical -->
+        <option value="MZN" class="dropdown-option">
+            Mozambican Metical (MZN) - 
+            <span class="currency-symbol">
+                MT
+            </span>
+        </option>
+
+        <!-- Namibian Dollar -->
+        <option value="NAD" class="dropdown-option">
+            Namibian Dollar (NAD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Nepalese Rupee -->
+        <option value="NPR" class="dropdown-option">
+            Nepalese Rupee (NPR) - 
+            <span class="currency-symbol">
+                रू
+            </span>
+        </option>
+
+        <!-- Netherlands Antillean Guilder -->
+        <option value="AWG" class="dropdown-option">
+            Netherlands Antillean Guilder (AWG) - 
+            <span class="currency-symbol">
+                ƒ
+            </span>
+        </option>
+
+        <!-- New Zealand Dollar -->
+        <option value="NZD" class="dropdown-option">
+            New Zealand Dollar (NZD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Nicaraguan Córdoba -->
+        <option value="NIO" class="dropdown-option">
+            Nicaraguan Córdoba (NIO) - 
+            <span class="currency-symbol">
+                C$
+            </span>
+        </option>
+
+        <!-- Nigerian Naira -->
+        <option value="NGN" class="dropdown-option">
+            Nigerian Naira (NGN) - 
+            <span class="currency-symbol">
+                ₦
+            </span>
+        </option>
+
+        <!-- North Korean Won -->
+        <option value="KPW" class="dropdown-option">
+            North Korean Won (KPW) - 
+            <span class="currency-symbol">
+                ₩
+            </span>
+        </option>
+
+        <!-- Norwegian Krone -->
+        <option value="NOK" class="dropdown-option">
+            Norwegian Krone (NOK) - 
+            <span class="currency-symbol">
+                kr
+            </span>
+        </option>
+
+        <!-- Omani Rial -->
+        <option value="OMR" class="dropdown-option">
+            Omani Rial (OMR) - 
+            <span class="currency-symbol">
+                ر.ع.
+            </span>
+        </option>
+
+        <!-- Pakistani Rupee -->
+        <option value="PKR" class="dropdown-option">
+            Pakistani Rupee (PKR) - 
+            <span class="currency-symbol">
+                ₨
+            </span>
+        </option>
+
+        <!-- Panamanian Balboa -->
+        <option value="PAB" class="dropdown-option">
+            Panamanian Balboa (PAB) - 
+            <span class="currency-symbol">
+                B/
+            </span>
+        </option>
+
+        <!-- Papua New Guinean Kina -->
+        <option value="PGK" class="dropdown-option">
+            Papua New Guinean Kina (PGK) - 
+            <span class="currency-symbol">
+                K
+            </span>
+        </option>
+
+        <!-- Paraguayan Guarani -->
+        <option value="PYG" class="dropdown-option">
+            Paraguayan Guarani (PYG) - 
+            <span class="currency-symbol">
+                Gs
+            </span>
+        </option>
+
+        <!-- Peruvian Nuevo Sol -->
+        <option value="PEN" class="dropdown-option">
+            Peruvian Nuevo Sol (PEN) - 
+            <span class="currency-symbol">
+                S/.
+            </span>
+        </option>
+
+        <!-- Philippine Peso -->
+        <option value="PHP" class="dropdown-option">
+            Philippine Peso (PHP) - 
+            <span class="currency-symbol">
+                ₱
+            </span>
+        </option>
+
+        <!-- Polish Zloty -->
+        <option value="PLN" class="dropdown-option">
+            Polish Zloty (PLN) - 
+            <span class="currency-symbol">
+                zł
+            </span>
+        </option>
+
+        <!-- Qatari Rial -->
+        <option value="QAR" class="dropdown-option">
+            Qatari Rial (QAR) - 
+            <span class="currency-symbol">
+                ر.ق
+            </span>
+        </option>
+
+        <!-- Romanian Leu -->
+        <option value="RON" class="dropdown-option">
+            Romanian Leu (RON) - 
+            <span class="currency-symbol">
+                lei
+            </span>
+        </option>
+
+        <!-- Russian Ruble -->
+        <option value="RUB" class="dropdown-option">
+            Russian Ruble (RUB) - 
+            <span class="currency-symbol">
+                ₽
+            </span>
+        </option>
+
+        <!-- Rwandan Franc -->
+        <option value="RWF" class="dropdown-option">
+            Rwandan Franc (RWF) - 
+            <span class="currency-symbol">
+                Fr
+            </span>
+        </option>
+
+        <!-- Saint Helena Pound -->
+        <option value="SHP" class="dropdown-option">
+            Saint Helena Pound (SHP) - 
+            <span class="currency-symbol">
+                £
+            </span>
+        </option>
+
+        <!-- Samoan Tala -->
+        <option value="WST" class="dropdown-option">
+            Samoan Tala (WST) - 
+            <span class="currency-symbol">
+                T
+            </span>
+        </option>
+
+        <!-- São Tomé and Príncipe Dobra -->
+        <option value="STN" class="dropdown-option">
+            São Tomé and Príncipe Dobra (STN) - 
+            <span class="currency-symbol">
+                Db
+            </span>
+        </option>
+
+        <!-- Saudi Riyal -->
+        <option value="SAR" class="dropdown-option">
+            Saudi Riyal (SAR) - 
+            <span class="currency-symbol">
+                ر.س
+            </span>
+        </option>
+
+        <!-- Seychellois Rupee -->
+        <option value="SCR" class="dropdown-option">
+            Seychellois Rupee (SCR) - 
+            <span class="currency-symbol">
+                ₨
+            </span>
+        </option>
+
+        <!-- Sierra Leonean Leone -->
+        <option value="SLL" class="dropdown-option">
+            Sierra Leonean Leone (SLL) - 
+            <span class="currency-symbol">
+                Le
+            </span>
+        </option>
+
+
+        <!-- Singapore Dollar -->
+        <option value="SGD" class="dropdown-option">
+            Singapore Dollar (SGD) - 
+            <span class="currency-symbol">
+                S$
+            </span>
+        </option>
+
+        <!-- Solomon Islands Dollar -->
+        <option value="SBD" class="dropdown-option">
+            Solomon Islands Dollar (SBD) - 
+            <span class="currency-symbol">
+                SI$
+            </span>
+        </option>
+
+        <!-- Somali Shilling -->
+        <option value="SOS" class="dropdown-option">
+            Somali Shilling (SOS) - 
+            <span class="currency-symbol">
+                Sh
+            </span>
+        </option>
+
+        <!-- South African Rand -->
+        <option value="ZAR" class="dropdown-option">
+            South African Rand (ZAR) - 
+            <span class="currency-symbol">
+                R
+            </span>
+        </option>
+
+        <!-- South Korean Won -->
+        <option value="KRW" class="dropdown-option">
+            South Korean Won (KRW) - 
+            <span class="currency-symbol">
+                ₩
+            </span>
+        </option>
+
+        <!-- Sri Lankan Rupee -->
+        <option value="LKR" class="dropdown-option">
+            Sri Lankan Rupee (LKR) - 
+            <span class="currency-symbol">
+                රු
+            </span>
+        </option>
+
+        <!-- Sudanese Pound -->
+        <option value="SDG" class="dropdown-option">
+            Sudanese Pound (SDG) - 
+            <span class="currency-symbol">
+                ج.س
+            </span>
+        </option>
+
+        <!-- Surinamese Dollar -->
+        <option value="SRD" class="dropdown-option">
+            Surinamese Dollar (SRD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Swazi Lilangeni -->
+        <option value="SZL" class="dropdown-option">
+            Swazi Lilangeni (SZL) - 
+            <span class="currency-symbol">
+                E
+            </span>
+        </option>
+
+        <!-- Swedish Krona -->
+        <option value="SEK" class="dropdown-option">
+            Swedish Krona (SEK) - 
+            <span class="currency-symbol">
+                kr
+            </span>
+        </option>
+
+        <!-- Swiss Franc -->
+        <option value="CHF" class="dropdown-option">
+            Swiss Franc (CHF) - 
+            <span class="currency-symbol">
+                CHF
+            </span>
+        </option>
+
+        <!-- Syrian Pound -->
+        <option value="SYP" class="dropdown-option">
+            Syrian Pound (SYP) - 
+            <span class="currency-symbol">
+                ل.س
+            </span>
+        </option>
+
+        <!-- Tajikistani Somoni -->
+        <option value="TJS" class="dropdown-option">
+            Tajikistani Somoni (TJS) - 
+            <span class="currency-symbol">
+                SM
+            </span>
+        </option>
+
+        <!-- Tanzanian Shilling -->
+        <option value="TZS" class="dropdown-option">
+            Tanzanian Shilling (TZS) - 
+            <span class="currency-symbol">
+                TSh
+            </span>
+        </option>
+
+        <!-- Thai Baht -->
+        <option value="THB" class="dropdown-option">
+            Thai Baht (THB) - 
+            <span class="currency-symbol">
+                ฿
+            </span>
+        </option>
+
+        <!-- Tongan Paʻanga -->
+        <option value="TOP" class="dropdown-option">
+            Tongan Paʻanga (TOP) - 
+            <span class="currency-symbol">
+                T$
+            </span>
+        </option>
+
+        <!-- Trinidad and Tobago Dollar -->
+        <option value="TTD" class="dropdown-option">
+            Trinidad and Tobago Dollar (TTD) - 
+            <span class="currency-symbol">
+                TT$
+            </span>
+        </option>
+
+        <!-- Tunisian Dinar -->
+        <option value="TND" class="dropdown-option">
+            Tunisian Dinar (TND) - 
+            <span class="currency-symbol">
+                د.ت
+            </span>
+        </option>
+
+        <!-- Turkish Lira -->
+        <option value="TRY" class="dropdown-option">
+            Turkish Lira (TRY) - 
+            <span class="currency-symbol">
+                ₺
+            </span>
+        </option>
+
+        <!-- Turkmenistan Manat -->
+        <option value="TMT" class="dropdown-option">
+            Turkmenistan Manat (TMT) - 
+            <span class="currency-symbol">
+                T
+            </span>
+        </option>
+
+        <!-- Ugandan Shilling -->
+        <option value="UGX" class="dropdown-option">
+            Ugandan Shilling (UGX) - 
+            <span class="currency-symbol">
+                USh
+            </span>
+        </option>
+
+        <!-- Ukrainian Hryvnia -->
+        <option value="UAH" class="dropdown-option">
+            Ukrainian Hryvnia (UAH) - 
+            <span class="currency-symbol">
+                ₴
+            </span>
+        </option>
+
+        <!-- United Arab Emirates Dirham -->
+        <option value="AED" class="dropdown-option">
+            United Arab Emirates Dirham (AED) - 
+            <span class="currency-symbol">
+                د.إ
+            </span>
+        </option>
+
+        <!-- United States Dollar -->
+        <option value="USD" class="dropdown-option" selected>
+            
+            United States Dollar (USD) - 
+            <span class="currency-symbol">
+                $
+            </span>
+        </option>
+
+        <!-- Uruguayan Peso -->
+        <option value="UYU" class="dropdown-option">
+            Uruguayan Peso (UYU) - 
+            <span class="currency-symbol">
+                $U
+            </span>
+        </option>
+
+        <!-- Uzbekistani Som -->
+        <option value="UZS" class="dropdown-option">
+            Uzbekistani Som (UZS) - 
+            <span class="currency-symbol">
+                soʻm
+            </span>
+        </option>
+
+        <!-- Vanuatu Vatu -->
+        <option value="VUV" class="dropdown-option">
+            Vanuatu Vatu (VUV) - 
+            <span class="currency-symbol">
+                Vt
+            </span>
+        </option>
+
+        <!-- Venezuelan Bolívar -->
+        <option value="VEF" class="dropdown-option">
+            Venezuelan Bolívar (VEF) - 
+            <span class="currency-symbol">
+                Bs
+            </span>
+        </option>
+
+        <!-- Vietnamese đồng -->
+        <option value="VND" class="dropdown-option">
+            Vietnamese đồng (VND) - 
+            <span class="currency-symbol">
+                ₫
+            </span>
+        </option>
+
+        <!-- Yemeni Rial -->
+        <option value="YER" class="dropdown-option">
+            Yemeni Rial (YER) - 
+            <span class="currency-symbol">
+                ﷼
+            </span>
+        </option>
+
+        <!-- Zambian Kwacha -->
+        <option value="ZMW" class="dropdown-option">
+            Zambian Kwacha (ZMW) - 
+            <span class="currency-symbol">
+                K
+            </span>
+        </option>
+
+        <!-- Zimbabwean Dollar -->
+        <option value="ZWL" class="dropdown-option">
+            Zimbabwean Dollar (ZWL) - 
+            <span class="currency-symbol">
+                Z$
+            </span>
+        </option>
+
+    </select>
+
+</body>
+</html>
