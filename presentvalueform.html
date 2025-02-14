@@ -1872,23 +1872,6 @@ form.addEventListener('submit', function(event) {
 });
 
 
-// PDF Form Result Button Functionality
-function printResults() {
-    var printContent = document.getElementById('calcResults').innerHTML;
-    var printWindow = window.open('', '', 'height=500,width=800');
-    
-    // Include styles from the parent page
-    var styles = Array.from(document.styleSheets).map(function(sheet) {
-        return Array.from(sheet.cssRules).map(rule => rule.cssText).join('');
-    }).join('');
-    
-    printWindow.document.write('<html><head><title>Present Value Calculator Results</title><style>' + styles + '</style></head><body>');
-    printWindow.document.write('<article id="calcResults">' + printContent + '</article>'); // Only print the results div
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-    printWindow.print();
-}
-
 
 // Calculate and Edit Form Button Functionality
 // Repititon sighted will need optimization
