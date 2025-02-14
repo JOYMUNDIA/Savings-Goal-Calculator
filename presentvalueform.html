@@ -1640,6 +1640,81 @@ clearBtn.addEventListener('click', function() {
     inputElem.value = ''; // Clear the input field
 });
 
+// Calculate and Edit Form Button Functionality
+// Repititon sighted will need optimization
+const calculateButton = document.getElementById('calculateBtn');
+const editFormBtn = document.getElementById('editFormBtn');
+const inputform = document.getElementById('inputform');
+const resultoutput = document.getElementById('resultsoutput');
+
+// Ensure the initial display states are correct (add these styles in your CSS as well)
+if (inputform.style.display !== 'flex') {
+    inputform.style.display = 'flex';  // Or set default to 'none' if needed
+}
+if (resultoutput.style.display !== 'grid') {
+    resultoutput.style.display = 'none'; // Or set default to 'none' if needed
+}
+
+// Calculate Button functionality
+calculateButton.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'flex') {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    } else {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    }
+    window.scrollTo(0, 0); // Scroll to the Top
+    // Call handleFormSubmit to calculate and display results after form is submitted
+    handleFormSubmit();
+});
+
+// New Calculation Button functionality
+newCalculation.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'none') {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    } else {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    }
+
+    window.scrollTo(0, 0); // Scroll to the Top
+
+    // Clear Input Fields
+    const inputsforclr = inputform.querySelectorAll('input, textarea');
+    inputsforclr.forEach(input => {
+        if (input.type === 'radio' || input.type === 'checkbox') {
+            input.checked = false;
+        } else {
+            input.value = '';
+        }
+    });
+});
+
+// Edit Form Button functionality
+editFormBtn.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'none') {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    } else {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    }
+    window.scrollTo(0, 0); // Scroll to the Top
+    // Call handleFormSubmit to recalculate and display the updated results based on edits
+    handleFormSubmit();
+});
+
+
+//Back to Options Button Functionality
+document.getElementById('BackToOptionsBtn').addEventListener('click', function () {
+    // Redirect to index.html and scroll to the section with id="cards-section"
+    window.location.href = "index.html#cards-section";
+});
 
 //form Handling
 
@@ -1871,79 +1946,6 @@ form.addEventListener('submit', function(event) {
     handleFormSubmit();  // Call the function to handle form data and display results
 });
 
-
-
-// Calculate and Edit Form Button Functionality
-// Repititon sighted will need optimization
-const calculateButton = document.getElementById('calculateBtn');
-const editFormBtn = document.getElementById('editFormBtn');
-const inputform = document.getElementById('inputform');
-const resultoutput = document.getElementById('resultsoutput');
-
-// Ensure the initial display states are correct (add these styles in your CSS as well)
-if (inputform.style.display !== 'flex') {
-    inputform.style.display = 'flex';  // Or set default to 'none' if needed
-}
-if (resultoutput.style.display !== 'grid') {
-    resultoutput.style.display = 'none'; // Or set default to 'none' if needed
-}
-
-// Calculate Button functionality
-calculateButton.addEventListener('click', () => {
-    // Toggle the display of the divs
-    if (inputform.style.display === 'flex') {
-        inputform.style.display = 'none';
-        resultoutput.style.display = 'grid';
-    } else {
-        inputform.style.display = 'flex';
-        resultoutput.style.display = 'none';
-    }
-    window.scrollTo(0, 0); // Scroll to the Top
-});
-
-// New Calculation Button functionality
-newCalculation.addEventListener('click', () => {
-    // Toggle the display of the divs
-    if (inputform.style.display === 'none') {
-        inputform.style.display = 'flex';
-        resultoutput.style.display = 'none';
-    } else {
-        inputform.style.display = 'none';
-        resultoutput.style.display = 'grid';
-    }
-
-    window.scrollTo(0, 0); // Scroll to the Top
-
-    // Clear Input Fields
-    const inputsforclr = inputform.querySelectorAll('input, textarea');
-    inputsforclr.forEach(input => {
-        if (input.type === 'radio' || input.type === 'checkbox') {
-            input.checked = false;
-        } else {
-            input.value = '';
-        }
-    });
-});
-
-// Edit Form Button functionality
-editFormBtn.addEventListener('click', () => {
-    // Toggle the display of the divs
-    if (inputform.style.display === 'none') {
-        inputform.style.display = 'flex';
-        resultoutput.style.display = 'none';
-    } else {
-        inputform.style.display = 'none';
-        resultoutput.style.display = 'grid';
-    }
-    window.scrollTo(0, 0); // Scroll to the Top
-});
-
-
-//Back to Options Button Functionality
-document.getElementById('BackToOptionsBtn').addEventListener('click', function () {
-    // Redirect to index.html and scroll to the section with id="cards-section"
-    window.location.href = "index.html#cards-section";
-});
 
     </script>
 </body>
