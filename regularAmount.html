@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Amount Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="form-parent-container" id="inputform">
+        <div class="form-container">
+            <h1>Regular Amount Calculator</h1>
+            <form id="present-value" method="post">
+
+                <div class="form-fields-container">
+
+                    <!--Currency Selection-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3 class="currency">Please select a currency:</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment">
+                                <div class="select-container">
+                                    <select id="currency" name="currency">
+                                        <!-- Afghan Afghani -->
+                                    <option value="AFN" class="dropdown-option">
+                                        Afghan Afghani (AFN) - 
+                    
+                                            ؋
+                                        
+                                    </option>
+
+                                    <!-- Albanian Lek -->
+                                    <option value="ALL" class="dropdown-option">
+                                        Albanian Lek (ALL) - 
+                                        
+                                            L
+                                        
+                                    </option>
+
+                                    <!-- Algerian Dinar -->
+                                    <option value="DZD" class="dropdown-option">
+                                        Algerian Dinar (DZD) - 
+                                        
+                                            د.ج
+                                        
+                                    </option>
+
+                                    <!-- Andorran Peseta -->
+                                    <option value="ADP" class="dropdown-option">
+                                        Andorran Peseta (ADP) - 
+                                        
+                                            pt
+                                        
+                                    </option>
+
+                                    <!-- Angolan Kwanza -->
+                                    <option value="AOA" class="dropdown-option">
+                                        Angolan Kwanza (AOA) - 
+                                        
+                                            Kz
+                                        
+                                    </option>
+
+                                    <!-- East Caribbean Dollar -->
+                                    <option value="XCD" class="dropdown-option">
+                                        East Caribbean Dollar (XCD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Argentine Peso -->
+                                    <option value="ARS" class="dropdown-option">
+                                        Argentine Peso (ARS) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Armenian Dram -->
+                                    <option value="AMD" class="dropdown-option">
+                                        Armenian Dram (AMD) - 
+                                        
+                                            ֏
+                                        
+                                    </option>
+
+                                    <!-- Aruban Florin -->
+                                    <option value="AWG" class="dropdown-option">
+                                        Aruban Florin (AWG) - 
+                                        
+                                            ƒ
+                                        
+                                    </option>
+
+                                    <!-- Australian Dollar -->
+                                    <option value="AUD" class="dropdown-option">
+                                        Australian Dollar (AUD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Azerbaijani Manat -->
+                                    <option value="AZN" class="dropdown-option">
+                                        Azerbaijani Manat (AZN) - 
+                                        
+                                            ₼
+                                        
+                                    </option>
+
+                                    <!-- Bahamian Dollar -->
+                                    <option value="BSD" class="dropdown-option">
+                                        Bahamian Dollar (BSD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Bahraini Dinar -->
+                                    <option value="BHD" class="dropdown-option">
+                                        Bahraini Dinar (BHD) - 
+                                        
+                                            د.ب
+                                        
+                                    </option>
+
+                                    <!-- Bangladeshi Taka -->
+                                    <option value="BDT" class="dropdown-option">
+                                        Bangladeshi Taka (BDT) - 
+                                        
+                                            ৳
+                                        
+                                    </option>
+
+                                    <!-- Barbadian Dollar -->
+                                    <option value="BBD" class="dropdown-option">
+                                        Barbadian Dollar (BBD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Belarusian Ruble -->
+                                    <option value="BYN" class="dropdown-option">
+                                        Belarusian Ruble (BYN) - 
+                                        
+                                            Br
+                                        
+                                    </option>
+
+                                    <!-- Belize Dollar -->
+                                    <option value="BZD" class="dropdown-option">
+                                        Belize Dollar (BZD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Bermudian Dollar -->
+                                    <option value="BMD" class="dropdown-option">
+                                        Bermudian Dollar (BMD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Bhutanese Ngultrum -->
+                                    <option value="BTN" class="dropdown-option">
+                                        Bhutanese Ngultrum (BTN) - 
+                                        
+                                            Nu.
+                                        
+                                    </option>
+
+                                    <!-- Bolivian Boliviano -->
+                                    <option value="BOB" class="dropdown-option">
+                                        Bolivian Boliviano (BOB) - 
+                                        
+                                            Bs
+                                        
+                                    </option>
+
+                                    <!-- Bosnia and Herzegovina Convertible Mark -->
+                                    <option value="BAM" class="dropdown-option">
+                                        Bosnia and Herzegovina Convertible Mark (BAM) - 
+                                        
+                                            KM
+                                        
+                                    </option>
+
+                                    <!-- Botswanan Pula -->
+                                    <option value="BWP" class="dropdown-option">
+                                        Botswanan Pula (BWP) - 
+                                        
+                                            P
+                                        
+                                    </option>
+
+                                    <!-- Brazilian Real -->
+                                    <option value="BRL" class="dropdown-option">
+                                        Brazilian Real (BRL) - 
+                                        
+                                            R$
+                                        
+                                    </option>
+
+                                    <!-- British Pound Sterling -->
+                                    <option value="GBP" class="dropdown-option">
+                                        British Pound Sterling (GBP) - 
+                                        
+                                            £
+                                        
+                                    </option>
+
+                                    <!-- Brunei Dollar -->
+                                    <option value="BND" class="dropdown-option">
+                                        Brunei Dollar (BND) - 
+                                        
+                                            B$
+                                        
+                                    </option>
+
+                                    <!-- Bulgarian Lev -->
+                                    <option value="BGN" class="dropdown-option">
+                                        Bulgarian Lev (BGN) - 
+                                        
+                                            лв
+                                        
+                                    </option>
+
+                                    <!-- Burundian Franc -->
+                                    <option value="BIF" class="dropdown-option">
+                                        Burundian Franc (BIF) - 
+                                        
+                                            FBu
+                                        
+                                    </option>
+
+                                    <!-- Cabo Verdean Escudo -->
+                                    <option value="CVE" class="dropdown-option">
+                                        Cabo Verdean Escudo (CVE) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Cambodian Riel -->
+                                    <option value="KHR" class="dropdown-option">
+                                        Cambodian Riel (KHR) - 
+                                        
+                                            ៛
+                                        
+                                    </option>
+
+                                    <!-- Canadian Dollar -->
+                                    <option value="CAD" class="dropdown-option">
+                                        Canadian Dollar (CAD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Central African CFA Franc -->
+                                    <option value="XAF" class="dropdown-option">
+                                        Central African CFA Franc (XAF) - 
+                                        
+                                            CFA
+                                        
+                                    </option>
+
+                                    <!-- Chilean Peso -->
+                                    <option value="CLP" class="dropdown-option">
+                                        Chilean Peso (CLP) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Chinese Yuan -->
+                                    <option value="CNY" class="dropdown-option">
+                                        Chinese Yuan (CNY) - 
+                                        
+                                            ¥
+                                        
+                                    </option>
+
+
+                                    <!-- Colombian Peso -->
+                                    <option value="COP" class="dropdown-option">
+                                        Colombian Peso (COP) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Comorian Franc -->
+                                    <option value="KMF" class="dropdown-option">
+                                        Comorian Franc (KMF) - 
+                                        
+                                            CF
+                                        
+                                    </option>
+
+                                    <!-- Congolese Franc -->
+                                    <option value="CDF" class="dropdown-option">
+                                        Congolese Franc (CDF) - 
+                                        
+                                            FC
+                                        
+                                    </option>
+
+                                    <!-- Costa Rican Colón -->
+                                    <option value="CRC" class="dropdown-option">
+                                        Costa Rican Colón (CRC) - 
+                                        
+                                            ₡
+                                        
+                                    </option>
+
+                                    <!-- Croatian Kuna -->
+                                    <option value="HRK" class="dropdown-option">
+                                        Croatian Kuna (HRK) - 
+                                        
+                                            kn
+                                        
+                                    </option>
+
+                                    <!-- Cuban Peso -->
+                                    <option value="CUP" class="dropdown-option">
+                                        Cuban Peso (CUP) - 
+                                        
+                                            ₱
+                                        
+                                    </option>
+
+                                    <!-- Czech Koruna -->
+                                    <option value="CZK" class="dropdown-option">
+                                        Czech Koruna (CZK) - 
+                                        
+                                            Kč
+                                        
+                                    </option>
+
+                                    <!-- Danish Krone -->
+                                    <option value="DKK" class="dropdown-option">
+                                        Danish Krone (DKK) - 
+                                        
+                                            kr
+                                        
+                                    </option>
+
+                                    <!-- Djiboutian Franc -->
+                                    <option value="DJF" class="dropdown-option">
+                                        Djiboutian Franc (DJF) - 
+                                        
+                                            Fdj
+                                        
+                                    </option>
+
+                                    <!-- Dominican Peso -->
+                                    <option value="DOP" class="dropdown-option">
+                                        Dominican Peso (DOP) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- East Caribbean Dollar -->
+                                    <option value="XCD" class="dropdown-option">
+                                        East Caribbean Dollar (XCD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Egyptian Pound -->
+                                    <option value="EGP" class="dropdown-option">
+                                        Egyptian Pound (EGP) - 
+                                        
+                                            ج.م
+                                        
+                                    </option>
+
+                                    <!-- El Salvadoran Colón -->
+                                    <option value="SVC" class="dropdown-option">
+                                        El Salvadoran Colón (SVC) - 
+                                        
+                                            ₡
+                                        
+                                    </option>
+
+                                    <!-- Equatorial Guinean Ekwele -->
+                                    <option value="GNF" class="dropdown-option">
+                                        Equatorial Guinean Ekwele (GNF) - 
+                                        
+                                            FCFA
+                                        
+                                    </option>
+
+                                    <!-- Eritrean Nakfa -->
+                                    <option value="ERN" class="dropdown-option">
+                                        Eritrean Nakfa (ERN) - 
+                                        
+                                            Nfk
+                                        
+                                    </option>
+
+                                    <!-- Estonian Kroon -->
+                                    <option value="EEK" class="dropdown-option">
+                                        Estonian Kroon (EEK) - 
+                                        
+                                            kr
+                                        
+                                    </option>
+
+                                    <!-- Ethiopian Birr -->
+                                    <option value="ETB" class="dropdown-option">
+                                        Ethiopian Birr (ETB) - 
+                                        
+                                            Br
+                                        
+                                    </option>
+
+                                    <!-- Euro -->
+                                    <option value="EUR" class="dropdown-option">
+                                        Euro (EUR) - 
+                                        
+                                            €
+                                        
+                                    </option>
+
+                                    <!-- Falkland Islands Pound -->
+                                    <option value="FKP" class="dropdown-option">
+                                        Falkland Islands Pound (FKP) - 
+                                        
+                                            £
+                                        
+                                    </option>
+
+                                    <!-- Fijian Dollar -->
+                                    <option value="FJD" class="dropdown-option">
+                                        Fijian Dollar (FJD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Finnish Markka -->
+                                    <option value="FIM" class="dropdown-option">
+                                        Finnish Markka (FIM) - 
+                                        
+                                            mk
+                                        
+                                    </option>
+
+                                    <!-- Gambian Dalasi -->
+                                    <option value="GMD" class="dropdown-option">
+                                        Gambian Dalasi (GMD) - 
+                                        
+                                            D
+                                        
+                                    </option>
+
+                                    <!-- Georgian Lari -->
+                                    <option value="GEL" class="dropdown-option">
+                                        Georgian Lari (GEL) - 
+                                        
+                                            ₾
+                                        
+                                    </option>
+
+                                    <!-- Ghanaian Cedi -->
+                                    <option value="GHS" class="dropdown-option">
+                                        Ghanaian Cedi (GHS) - 
+                                        
+                                            ₵
+                                        
+                                    </option>
+
+                                    <!-- Gibraltar Pound -->
+                                    <option value="GIP" class="dropdown-option">
+                                        Gibraltar Pound (GIP) - 
+                                        
+                                            £
+                                        
+                                    </option>
+
+                                    <!-- Guatemalan Quetzal -->
+                                    <option value="GTQ" class="dropdown-option">
+                                        Guatemalan Quetzal (GTQ) - 
+                                        
+                                            Q
+                                        
+                                    </option>
+
+                                    <!-- Guinean Franc -->
+                                    <option value="GNF" class="dropdown-option">
+                                        Guinean Franc (GNF) - 
+                                        
+                                            FG
+                                        
+                                    </option>
+
+                                    <!-- Guyanese Dollar -->
+                                    <option value="GYD" class="dropdown-option">
+                                        Guyanese Dollar (GYD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Haitian Gourde -->
+                                    <option value="HTG" class="dropdown-option">
+                                        Haitian Gourde (HTG) - 
+                                        
+                                            G
+                                        
+                                    </option>
+
+                                    <!-- Honduran Lempira -->
+                                    <option value="HNL" class="dropdown-option">
+                                        Honduran Lempira (HNL) - 
+                                        
+                                            L
+                                        
+                                    </option>
+
+
+                                    <!-- Hong Kong Dollar -->
+                                    <option value="HKD" class="dropdown-option">
+                                        Hong Kong Dollar (HKD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Hungarian Forint -->
+                                    <option value="HUF" class="dropdown-option">
+                                        Hungarian Forint (HUF) - 
+                                        
+                                            Ft
+                                        
+                                    </option>
+
+                                    <!-- Icelandic Króna -->
+                                    <option value="ISK" class="dropdown-option">
+                                        Icelandic Króna (ISK) - 
+                                        
+                                            kr
+                                        
+                                    </option>
+
+                                    <!-- Indian Rupee -->
+                                    <option value="INR" class="dropdown-option">
+                                        Indian Rupee (INR) - 
+                                        
+                                            ₹
+                                        
+                                    </option>
+
+                                    <!-- Indonesian Rupiah -->
+                                    <option value="IDR" class="dropdown-option">
+                                        Indonesian Rupiah (IDR) - 
+                                        
+                                            Rp
+                                        
+                                    </option>
+
+                                    <!-- Iranian Rial -->
+                                    <option value="IRR" class="dropdown-option">
+                                        Iranian Rial (IRR) - 
+                                        
+                                            ﷼
+                                        
+                                    </option>
+
+                                    <!-- Iraqi Dinar -->
+                                    <option value="IQD" class="dropdown-option">
+                                        Iraqi Dinar (IQD) - 
+                                        
+                                            ع.د
+                                        
+                                    </option>
+
+                                    <!-- Israeli New Shekel -->
+                                    <option value="ILS" class="dropdown-option">
+                                        Israeli New Shekel (ILS) - 
+                                        
+                                            ₪
+                                        
+                                    </option>
+
+                                    <!-- Jamaican Dollar -->
+                                    <option value="JMD" class="dropdown-option">
+                                        Jamaican Dollar (JMD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Japanese Yen -->
+                                    <option value="JPY" class="dropdown-option">
+                                        Japanese Yen (JPY) - 
+                                        
+                                            ¥
+                                        
+                                    </option>
+
+                                    <!-- Jordanian Dinar -->
+                                    <option value="JOD" class="dropdown-option">
+                                        Jordanian Dinar (JOD) - 
+                                        
+                                            د.أ
+                                        
+                                    </option>
+
+                                    <!-- Kazakhstani Tenge -->
+                                    <option value="KZT" class="dropdown-option">
+                                        Kazakhstani Tenge (KZT) - 
+                                        
+                                            ₸
+                                        
+                                    </option>
+
+                                    <!-- Kenyan Shilling -->
+                                    <option value="KES" class="dropdown-option">
+                                        Kenyan Shilling (KES) - 
+                                        
+                                            KSh
+                                        
+                                    </option>
+
+                                    <!-- Kiribati Dollar -->
+                                    <option value="AUD" class="dropdown-option">
+                                        Kiribati Dollar (AUD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Kuwaiti Dinar -->
+                                    <option value="KWD" class="dropdown-option">
+                                        Kuwaiti Dinar (KWD) - 
+                                        
+                                            د.ك
+                                        
+                                    </option>
+
+                                    <!-- Kyrgyzstani Som -->
+                                    <option value="KGS" class="dropdown-option">
+                                        Kyrgyzstani Som (KGS) - 
+                                        
+                                            сом
+                                        
+                                    </option>
+
+                                    <!-- Laotian Kip -->
+                                    <option value="LAK" class="dropdown-option">
+                                        Laotian Kip (LAK) - 
+                                        
+                                            ₭
+                                        
+                                    </option>
+
+                                    <!-- Latvian Lats -->
+                                    <option value="LVL" class="dropdown-option">
+                                        Latvian Lats (LVL) - 
+                                        
+                                            Ls
+                                        
+                                    </option>
+
+                                    <!-- Lebanese Pound -->
+                                    <option value="LBP" class="dropdown-option">
+                                        Lebanese Pound (LBP) - 
+                                        
+                                            ل.ل
+                                        
+                                    </option>
+
+                                    <!-- Lesotho Loti -->
+                                    <option value="LSL" class="dropdown-option">
+                                        Lesotho Loti (LSL) - 
+                                        
+                                            M
+                                        
+                                    </option>
+
+                                    <!-- Liberian Dollar -->
+                                    <option value="LRD" class="dropdown-option">
+                                        Liberian Dollar (LRD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Libyan Dinar -->
+                                    <option value="LYD" class="dropdown-option">
+                                        Libyan Dinar (LYD) - 
+                                        
+                                            ل.د
+                                        
+                                    </option>
+
+                                    <!-- Lithuanian Litas -->
+                                    <option value="LTL" class="dropdown-option">
+                                        Lithuanian Litas (LTL) - 
+                                        
+                                            Lt
+                                        
+                                    </option>
+
+                                    <!-- Luxembourgish Franc -->
+                                    <option value="LUF" class="dropdown-option">
+                                        Luxembourgish Franc (LUF) - 
+                                        
+                                            ₣
+                                        
+                                    </option>
+
+                                    <!-- Macau Pataca -->
+                                    <option value="MOP" class="dropdown-option">
+                                        Macau Pataca (MOP) - 
+                                        
+                                            P
+                                        
+                                    </option>
+
+                                    <!-- Macedonian Denar -->
+                                    <option value="MKD" class="dropdown-option">
+                                        Macedonian Denar (MKD) - 
+                                        
+                                            ден
+                                        
+                                    </option>
+
+                                    <!-- Malagasy Ariary -->
+                                    <option value="MGA" class="dropdown-option">
+                                        Malagasy Ariary (MGA) - 
+                                        
+                                            Ar
+                                        
+                                    </option>
+
+                                    <!-- Malawian Kwacha -->
+                                    <option value="MWK" class="dropdown-option">
+                                        Malawian Kwacha (MWK) - 
+                                        
+                                            K
+                                        
+                                    </option>
+
+                                    <!-- Malaysian Ringgit -->
+                                    <option value="MYR" class="dropdown-option">
+                                        Malaysian Ringgit (MYR) - 
+                                        
+                                            RM
+                                        
+                                    </option>
+
+                                    <!-- Maldivian Rufiyaa -->
+                                    <option value="MVR" class="dropdown-option">
+                                        Maldivian Rufiyaa (MVR) - 
+                                        
+                                            Rf
+                                        
+                                    </option>
+
+
+                                    <!-- Mauritian Rupee -->
+                                    <option value="MUR" class="dropdown-option">
+                                        Mauritian Rupee (MUR) - 
+                                        
+                                            ₨
+                                        
+                                    </option>
+
+                                    <!-- Mexican Peso -->
+                                    <option value="MXN" class="dropdown-option">
+                                        Mexican Peso (MXN) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+
+                                    <!-- Moldovan Leu -->
+                                    <option value="MDL" class="dropdown-option">
+                                        Moldovan Leu (MDL) - 
+                                        
+                                            lei
+                                        
+                                    </option>
+
+                                    <!-- Mongolian Tugrik -->
+                                    <option value="MNT" class="dropdown-option">
+                                        Mongolian Tugrik (MNT) - 
+                                        
+                                            ₮
+                                        
+                                    </option>
+
+
+                                    <!-- Moroccan Dirham -->
+                                    <option value="MAD" class="dropdown-option">
+                                        Moroccan Dirham (MAD) - 
+                                        
+                                            د.م.
+                                        
+                                    </option>
+
+                                    <!-- Mozambican Metical -->
+                                    <option value="MZN" class="dropdown-option">
+                                        Mozambican Metical (MZN) - 
+                                        
+                                            MT
+                                        
+                                    </option>
+
+                                    <!-- Namibian Dollar -->
+                                    <option value="NAD" class="dropdown-option">
+                                        Namibian Dollar (NAD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Nepalese Rupee -->
+                                    <option value="NPR" class="dropdown-option">
+                                        Nepalese Rupee (NPR) - 
+                                        
+                                            रू
+                                        
+                                    </option>
+
+                                    <!-- Netherlands Antillean Guilder -->
+                                    <option value="AWG" class="dropdown-option">
+                                        Netherlands Antillean Guilder (AWG) - 
+                                        
+                                            ƒ
+                                        
+                                    </option>
+
+                                    <!-- New Zealand Dollar -->
+                                    <option value="NZD" class="dropdown-option">
+                                        New Zealand Dollar (NZD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Nicaraguan Córdoba -->
+                                    <option value="NIO" class="dropdown-option">
+                                        Nicaraguan Córdoba (NIO) - 
+                                        
+                                            C$
+                                        
+                                    </option>
+
+                                    <!-- Nigerian Naira -->
+                                    <option value="NGN" class="dropdown-option">
+                                        Nigerian Naira (NGN) - 
+                                        
+                                            ₦
+                                        
+                                    </option>
+
+                                    <!-- North Korean Won -->
+                                    <option value="KPW" class="dropdown-option">
+                                        North Korean Won (KPW) - 
+                                        
+                                            ₩
+                                        
+                                    </option>
+
+                                    <!-- Norwegian Krone -->
+                                    <option value="NOK" class="dropdown-option">
+                                        Norwegian Krone (NOK) - 
+                                        
+                                            kr
+                                        
+                                    </option>
+
+                                    <!-- Omani Rial -->
+                                    <option value="OMR" class="dropdown-option">
+                                        Omani Rial (OMR) - 
+                                        
+                                            ر.ع.
+                                        
+                                    </option>
+
+                                    <!-- Pakistani Rupee -->
+                                    <option value="PKR" class="dropdown-option">
+                                        Pakistani Rupee (PKR) - 
+                                        
+                                            ₨
+                                        
+                                    </option>
+
+                                    <!-- Panamanian Balboa -->
+                                    <option value="PAB" class="dropdown-option">
+                                        Panamanian Balboa (PAB) - 
+                                        
+                                            B/
+                                        
+                                    </option>
+
+                                    <!-- Papua New Guinean Kina -->
+                                    <option value="PGK" class="dropdown-option">
+                                        Papua New Guinean Kina (PGK) - 
+                                        
+                                            K
+                                        
+                                    </option>
+
+                                    <!-- Paraguayan Guarani -->
+                                    <option value="PYG" class="dropdown-option">
+                                        Paraguayan Guarani (PYG) - 
+                                        
+                                            Gs
+                                        
+                                    </option>
+
+                                    <!-- Peruvian Nuevo Sol -->
+                                    <option value="PEN" class="dropdown-option">
+                                        Peruvian Nuevo Sol (PEN) - 
+                                        
+                                            S/.
+                                        
+                                    </option>
+
+                                    <!-- Philippine Peso -->
+                                    <option value="PHP" class="dropdown-option">
+                                        Philippine Peso (PHP) - 
+                                        
+                                            ₱
+                                        
+                                    </option>
+
+                                    <!-- Polish Zloty -->
+                                    <option value="PLN" class="dropdown-option">
+                                        Polish Zloty (PLN) - 
+                                        
+                                            zł
+                                        
+                                    </option>
+
+                                    <!-- Qatari Rial -->
+                                    <option value="QAR" class="dropdown-option">
+                                        Qatari Rial (QAR) - 
+                                        
+                                            ر.ق
+                                        
+                                    </option>
+
+                                    <!-- Romanian Leu -->
+                                    <option value="RON" class="dropdown-option">
+                                        Romanian Leu (RON) - 
+                                        
+                                            lei
+                                        
+                                    </option>
+
+                                    <!-- Russian Ruble -->
+                                    <option value="RUB" class="dropdown-option">
+                                        Russian Ruble (RUB) - 
+                                        
+                                            ₽
+                                        
+                                    </option>
+
+                                    <!-- Rwandan Franc -->
+                                    <option value="RWF" class="dropdown-option">
+                                        Rwandan Franc (RWF) - 
+                                        
+                                            Fr
+                                        
+                                    </option>
+
+                                    <!-- Saint Helena Pound -->
+                                    <option value="SHP" class="dropdown-option">
+                                        Saint Helena Pound (SHP) - 
+                                        
+                                            £
+                                        
+                                    </option>
+
+                                    <!-- Samoan Tala -->
+                                    <option value="WST" class="dropdown-option">
+                                        Samoan Tala (WST) - 
+                                        
+                                            T
+                                        
+                                    </option>
+
+                                    <!-- São Tomé and Príncipe Dobra -->
+                                    <option value="STN" class="dropdown-option">
+                                        São Tomé and Príncipe Dobra (STN) - 
+                                        
+                                            Db
+                                        
+                                    </option>
+
+                                    <!-- Saudi Riyal -->
+                                    <option value="SAR" class="dropdown-option">
+                                        Saudi Riyal (SAR) - 
+                                        
+                                            ر.س
+                                        
+                                    </option>
+
+                                    <!-- Seychellois Rupee -->
+                                    <option value="SCR" class="dropdown-option">
+                                        Seychellois Rupee (SCR) - 
+                                        
+                                            ₨
+                                        
+                                    </option>
+
+                                    <!-- Sierra Leonean Leone -->
+                                    <option value="SLL" class="dropdown-option">
+                                        Sierra Leonean Leone (SLL) - 
+                                        
+                                            Le
+                                        
+                                    </option>
+
+
+                                    <!-- Singapore Dollar -->
+                                    <option value="SGD" class="dropdown-option">
+                                        Singapore Dollar (SGD) - 
+                                        
+                                            S$
+                                        
+                                    </option>
+
+                                    <!-- Solomon Islands Dollar -->
+                                    <option value="SBD" class="dropdown-option">
+                                        Solomon Islands Dollar (SBD) - 
+                                        
+                                            SI$
+                                        
+                                    </option>
+
+                                    <!-- Somali Shilling -->
+                                    <option value="SOS" class="dropdown-option">
+                                        Somali Shilling (SOS) - 
+                                        
+                                            Sh
+                                        
+                                    </option>
+
+                                    <!-- South African Rand -->
+                                    <option value="ZAR" class="dropdown-option">
+                                        South African Rand (ZAR) - 
+                                        
+                                            R
+                                        
+                                    </option>
+
+                                    <!-- South Korean Won -->
+                                    <option value="KRW" class="dropdown-option">
+                                        South Korean Won (KRW) - 
+                                        
+                                            ₩
+                                        
+                                    </option>
+
+                                    <!-- Sri Lankan Rupee -->
+                                    <option value="LKR" class="dropdown-option">
+                                        Sri Lankan Rupee (LKR) - 
+                                        
+                                            රු
+                                        
+                                    </option>
+
+                                    <!-- Sudanese Pound -->
+                                    <option value="SDG" class="dropdown-option">
+                                        Sudanese Pound (SDG) - 
+                                        
+                                            ج.س
+                                        
+                                    </option>
+
+                                    <!-- Surinamese Dollar -->
+                                    <option value="SRD" class="dropdown-option">
+                                        Surinamese Dollar (SRD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Swazi Lilangeni -->
+                                    <option value="SZL" class="dropdown-option">
+                                        Swazi Lilangeni (SZL) - 
+                                        
+                                            E
+                                        
+                                    </option>
+
+                                    <!-- Swedish Krona -->
+                                    <option value="SEK" class="dropdown-option">
+                                        Swedish Krona (SEK) - 
+                                        
+                                            kr
+                                        
+                                    </option>
+
+                                    <!-- Swiss Franc -->
+                                    <option value="CHF" class="dropdown-option">
+                                        Swiss Franc (CHF) - 
+                                        
+                                            CHF
+                                        
+                                    </option>
+
+                                    <!-- Syrian Pound -->
+                                    <option value="SYP" class="dropdown-option">
+                                        Syrian Pound (SYP) - 
+                                        
+                                            ل.س
+                                        
+                                    </option>
+
+                                    <!-- Tajikistani Somoni -->
+                                    <option value="TJS" class="dropdown-option">
+                                        Tajikistani Somoni (TJS) - 
+                                        
+                                            SM
+                                        
+                                    </option>
+
+                                    <!-- Tanzanian Shilling -->
+                                    <option value="TZS" class="dropdown-option">
+                                        Tanzanian Shilling (TZS) - 
+                                        
+                                            TSh
+                                        
+                                    </option>
+
+                                    <!-- Thai Baht -->
+                                    <option value="THB" class="dropdown-option">
+                                        Thai Baht (THB) - 
+                                        
+                                            ฿
+                                        
+                                    </option>
+
+                                    <!-- Tongan Paʻanga -->
+                                    <option value="TOP" class="dropdown-option">
+                                        Tongan Paʻanga (TOP) - 
+                                        
+                                            T$
+                                        
+                                    </option>
+
+                                    <!-- Trinidad and Tobago Dollar -->
+                                    <option value="TTD" class="dropdown-option">
+                                        Trinidad and Tobago Dollar (TTD) - 
+                                        
+                                            TT$
+                                        
+                                    </option>
+
+                                    <!-- Tunisian Dinar -->
+                                    <option value="TND" class="dropdown-option">
+                                        Tunisian Dinar (TND) - 
+                                        
+                                            د.ت
+                                        
+                                    </option>
+
+                                    <!-- Turkish Lira -->
+                                    <option value="TRY" class="dropdown-option">
+                                        Turkish Lira (TRY) - 
+                                        
+                                            ₺
+                                        
+                                    </option>
+
+                                    <!-- Turkmenistan Manat -->
+                                    <option value="TMT" class="dropdown-option">
+                                        Turkmenistan Manat (TMT) - 
+                                        
+                                            T
+                                        
+                                    </option>
+
+                                    <!-- Ugandan Shilling -->
+                                    <option value="UGX" class="dropdown-option">
+                                        Ugandan Shilling (UGX) - 
+                                        
+                                            USh
+                                        
+                                    </option>
+
+                                    <!-- Ukrainian Hryvnia -->
+                                    <option value="UAH" class="dropdown-option">
+                                        Ukrainian Hryvnia (UAH) - 
+                                        
+                                            ₴
+                                        
+                                    </option>
+
+                                    <!-- United Arab Emirates Dirham -->
+                                    <option value="AED" class="dropdown-option">
+                                        United Arab Emirates Dirham (AED) - 
+                                        
+                                            د.إ
+                                        
+                                    </option>
+
+                                    <!-- United States Dollar -->
+                                    <option value="USD" class="dropdown-option" selected>
+                                        
+                                        United States Dollar (USD) - 
+                                        
+                                            $
+                                        
+                                    </option>
+
+                                    <!-- Uruguayan Peso -->
+                                    <option value="UYU" class="dropdown-option">
+                                        Uruguayan Peso (UYU) - 
+                                        
+                                            $U
+                                        
+                                    </option>
+
+                                    <!-- Uzbekistani Som -->
+                                    <option value="UZS" class="dropdown-option">
+                                        Uzbekistani Som (UZS) - 
+                                        
+                                            soʻm
+                                        
+                                    </option>
+
+                                    <!-- Vanuatu Vatu -->
+                                    <option value="VUV" class="dropdown-option">
+                                        Vanuatu Vatu (VUV) - 
+                                        
+                                            Vt
+                                        
+                                    </option>
+
+                                    <!-- Venezuelan Bolívar -->
+                                    <option value="VEF" class="dropdown-option">
+                                        Venezuelan Bolívar (VEF) - 
+                                        
+                                            Bs
+                                        
+                                    </option>
+
+                                    <!-- Vietnamese đồng -->
+                                    <option value="VND" class="dropdown-option">
+                                        Vietnamese đồng (VND) - 
+                                        
+                                            ₫
+                                        
+                                    </option>
+
+                                    <!-- Yemeni Rial -->
+                                    <option value="YER" class="dropdown-option">
+                                        Yemeni Rial (YER) - 
+                                        
+                                            ﷼
+                                        
+                                    </option>
+
+                                    <!-- Zambian Kwacha -->
+                                    <option value="ZMW" class="dropdown-option">
+                                        Zambian Kwacha (ZMW) - 
+                                        
+                                            K
+                                        
+                                    </option>
+
+                                    <!-- Zimbabwean Dollar -->
+                                    <option value="ZWL" class="dropdown-option">
+                                        Zimbabwean Dollar (ZWL) - 
+                                        
+                                            Z$
+                                        
+                                    </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Currency Selection-->
+
+                    <!--Purpose of saving-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3 class="purpose">Purpose of saving:</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment">
+                                <div class="select-container">
+                                    <select id="purpose" name="purpose" onchange="showCustomPurposeInput()">
+                                        <option value="Retirement">Retirement</option>
+                                        <option value="College Trust Fund / Education">College Trust Fund / Education</option>
+                                        <option value="Vacation">Vacation</option>
+                                        <option value="Major Purchase (e.g. Car, New Tech)">Major Purchase (e.g. Car, New Tech)</option>
+                                        <option value="Home Renovation / Upgrade">Home Renovation / Upgrade</option>
+                                        <option value="Life Celebration (e.g.Wedding, Graduation)">Life Celebration (e.g.Wedding, Graduation) </option>
+                                        <option value="Emergency Fund">Emergency Fund</option>
+                                        <option value="Major Repairs (e.g. Car Repair)">Major Repairs (e.g. Car Repair)</option>
+                                        <option value="Down Payment">Down Payment</option>
+                                        <option value="Medical Expenses (e.g. Upcoming Surgery)">Medical Expenses (e.g. Upcoming Surgery)</option>
+                                        <option value="Debt Clearance">Debt Clearance</option>
+                                        <option value="Business Investment">Business Investment</option>
+                                        <option value="Confidential">Prefer Not to State</option>
+                                        <option value="custom">Custom</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="custom-purpose" style="display: none;">
+                                <input type="text" id="custom-purpose-input" placeholder="Please enter purpose here">
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Purpose of saving-->
+
+                    <!--Target Financial Amount-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3 class="target-amount">Your Target Financial amount:</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment">
+                                <div class="target-amount-container">
+
+                                    <input type="text" id="target-amount" pattern="^[0-9,]+(\.[0-9,]+?$)" inputmode="decimal" placeholder="1,000" required>
+                                    <p class="amount-disclaimer">This field will be automatically cleared if anything other than digits and a single decimal point is entered.</p>
+                                    <button id="clear-btn" class="clear-btn">Clear</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Target Financial Amount-->
+
+                    <!--Saving Frequency-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3>How frequently do you plan to save?</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment radio-saving-frequency">
+                                <div class="column1">
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="dailyFrequency" name="savingfrequency" value="daily" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="daily">Daily</h3>
+                                    </div>
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="weeklyFrequency" name="savingfrequency" value="weekly" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="weekly">Weekly</h3>
+                                    </div>
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="monthlyFrequency" name="savingfrequency" value="monthly" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="monthly">Monthly</h3>
+                                    </div>
+                                </div>
+
+                                <div class="column2">
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="quarterlyFrequency" name="savingfrequency" value="quarterly" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="quarterly">Quarterly</h3>
+                                    </div>
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="semi-annuallyFrequency" name="savingfrequency" value="semi-annually" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="semi-annually">Semi-annually (Half-yearly)</h3>
+                                    </div>
+                                    <div class="radio-saving-frequency-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="annuallyFrequency" name="savingfrequency" value="annually" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="annually">Annually (Yearly)</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Compounding Frequency-->
+
+                    <!--Factoring Interest-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3>Will you be including interest in your calculation?</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment radio-interest-accountancy">
+                                <div class="column1">
+                                    <div class="radio-interest-accountancy-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="noInterest" name="interest-accountancy" value="No" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="no">No</h3>
+                                    </div>
+                                </div>
+                                <div class="column2">
+                                    <div class="radio-interest-accountancy-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="yesInterest" name="interest-accountancy" value="Yes" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="yes">Yes</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Factoring Interest-->
+
+                    <!--Show Interest Fields if Yes is checked -->
+                    <div class="showInterestFields">
+                        <!--Interest Rate-->
+                        <div class="form-field">
+                            <div class="form-label-compartment-parent">
+                                <div class="form-label-compartment">
+                                    <h3 class="interest-rate">Please enter the Interest Rate:</h3>
+                                </div>
+                            </div>
+                            <div class="form-input-compartment-parent">
+                                <div class="form-input-compartment">
+                                    <input type="number" id="interest-rate" placeholder="5" step="0.01" min="0">
+                                    <span><b>%</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Interest Rate-->
+
+                        <!--Compounding Frequency-->
+                        <div class="form-field">
+                            <div class="form-label-compartment-parent">
+                                <div class="form-label-compartment">
+                                    <h3>How is this interest compounded?</h3>
+                                </div>
+                            </div>
+                            <div class="form-input-compartment-parent">
+                                <div class="form-input-compartment radio-compound">
+                                    <div class="column1">
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="one-time" name="compounding" value="one-time" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="one-time">One-time</h3>
+                                        </div>
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="daily" name="compounding" value="daily" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="daily">Daily</h3>
+                                        </div>
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="weekly" name="compounding" value="weekly" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="weekly">Weekly</h3>
+                                        </div>
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="monthly" name="compounding" value="monthly" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="monthly">Monthly</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="column2">
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="quarterly" name="compounding" value="quarterly" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="quarterly">Quarterly</h3>
+                                        </div>
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="semi-annually" name="compounding" value="semi-annually" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="semi-annually">Semi-annually (Half-yearly)</h3>
+                                        </div>
+                                        <div class="radio-compund-option">
+                                            <div class="stylish-radio-btn">
+                                                <input type="radio" id="annually" name="compounding" value="annually" required>
+                                                <i class="fas fa-circle"></i>
+                                            </div>
+                                            <h3 class="annually">Annually (Yearly)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Compounding Frequency-->
+                    </div>
+
+                    <!--Tenure-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3 class="tenure">For how long do you plan to save?</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment">
+                                <div class="duration">
+                                    <div class="days-duration">
+                                        <input type="number" id="days-tenure" placeholder="0" min="0">
+                                        <span>Days</span>
+                                    </div>
+                                    <div class="weeks-duration">
+                                        <input type="number" id="weeks-tenure" placeholder="0" min="0">
+                                        <span>Weeks</span>
+                                    </div>
+                                    <div class="months-duration">
+                                        <input type="number" id="months-tenure" placeholder="0" min="0">
+                                        <span>Months</span>
+                                    </div>
+                                    <div class="years-duration">
+                                        <input type="number" id="years-tenure" placeholder="0" min="0">
+                                        <span>Years</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Tenure-->
+
+                    <!--Form Buttons-->
+                    <div class="form-actions">
+                        <button type="button" class="back-button">&#8592; Back to Calculator options</button>
+                        <button type="submit" class="calculate-button" id="calculateBtn">Calculate</button>
+                    </div>
+                    <!--End of Form Buttons-->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-results" id="resultsoutput">
+        <article class="form-result" id="calcResults">
+            <header>
+                <h1 class="form-result__title">
+                    <span class="form-result__title--top">Savings Goal Calculator</span>
+                    <span class="form-result__title--bottom">Present Value Results</span>
+                </h1>
+            </header>
+            
+            <main class="form-result__profiles">
+                <article class="form-result__profile">
+                    <span class="form-result__name purpose">Purpose of Saving</span>
+                    <span class="form-result__value purposeAnswer">Emergency Fund</span>
+                </article>
+    
+                <article class="form-result__profile">
+                    <span class="form-result__name goal">Financial Goal Amount</span>
+                    <span class="form-result__value goalAnswer">$ 1,000</span>
+                </article>
+
+                <article class="form-result__profile">
+                    <span class="form-result__name savingFrequency">Saving Frequency</span>
+                    <span class="form-result__value savingFrequencyAnswer">Monthly</span>
+                </article>
+
+                <article class="form-result__profile">
+                    <span class="form-result__name Tenure">Duration of Saving</span>
+                    <span class="form-result__value TenureAnswer">5 Years, 6 Months, 3 Weeks and 4 Days</span>
+                </article>
+
+                <article class="form-result__profile">
+                    <span class="form-result__name InterestInclusion">Include interest in your calculation?</span>
+                    <span class="form-result__value InterestInclusionAnswer">Yes</span>
+                </article>
+            
+                <article class="form-result__profile toggle-interest-result">
+                    <span class="form-result__name interestRate">Interest Rate</span>
+                    <span class="form-result__value interestRateAnswer">2.0%</span>
+                </article>
+
+                <article class="form-result__profile toggle-interest-result">
+                    <span class="form-result__name compoundingFrequency">Interest Rate compounding Frequency</span>
+                    <span class="form-result__value compoundingFrequencyAnswer">Monthly</span>
+                </article>
+    
+                <article class="form-result__profile toggle-interest-result">
+                    <span class="form-result__name InterestEarnings">Interest Amount Earned</span>
+                    <span class="form-result__value InterestEarningsAnswer">$ 40</span>
+                </article>
+
+                <article class="form-result__profile" id="regularAmountNoInterestArticle">
+                    <span class="form-result__name val RegularAmountNoInterest">How much you need to save monthly</span>
+                    <span class="form-result__value answer RegularAmountAnswerNoInterest">$ 2,000</span>
+                </article>
+    
+                <article class="form-result__profile toggle-interest-result">
+                    <span class="form-result__name val RegularAmount">How much you need to save monthly</span>
+                    <span class="form-result__value answer RegularAmountAnswer">$ 2,000</span>
+                </article>
+            </main>
+        </article>
+        <div class="form-result-btns">
+            <div class="form-result-btns-col1">
+                <button style="--slist: #eaebf1, #b1b7c9" class="invert" data-icon="✨" id="newCalculation">New Calculation</button>
+                <button style="--slist: #eaebf1, #b1b7c9" class="invert" data-icon="📝" id="editFormBtn">Edit Form</button>
+            </div>
+
+            <div class="form-result-btns-col2">
+                <button style="--slist: #eaebf1, #b1b7c9" class="invert" data-icon="⬅" id="BackToOptionsBtn">Back To Options</button>
+                <!--<button style="--slist: #eaebf1, #b1b7c9" class="invert" data-icon="📥" id="downloadPDF" onclick="printResults()">Download PDF</button>-->
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script>
+        // Custom Purpose
+        function showCustomPurposeInput() {
+            const purposeSelect = document.getElementById("purpose");
+            const customPurposeInput = document.getElementById("custom-purpose");
+            if (purposeSelect.value === "custom") {
+                customPurposeInput.style.display = "block";
+            } else {
+                customPurposeInput.style.display = "none";
+            }
+        }
+
+        // Amount Javascript
+
+// Get references to the elements
+const inputElem = document.getElementById('target-amount');
+const clearBtn = document.getElementById('clear-btn');
+
+// Function to add commas every 3 digits from the right
+function formatWithCommas(value) {
+    // Remove any commas first to prevent re-formatting issues
+    let number = value.replace(/,/g, '');
+
+    // Check if the value is a valid number
+    if (isNaN(number) || number === '') {
+        return ''; // Return empty if not a valid number
+    }
+
+    // Add commas every 3 digits from the right
+    return number.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// Function to handle user input and apply comma formatting
+function handleInputEdit(event) {
+    const cursorPosition = inputElem.selectionStart; // Store current cursor position
+
+    // Get the input value without commas
+    let value = inputElem.value.replace(/,/g, '');
+
+    // If it's not a valid number, reset the input
+    if (isNaN(value) && value !== '') {
+        inputElem.value = ""; // Reset the input field if non-numeric value is entered
+        return;
+    }
+
+    // Apply comma formatting
+    let formattedValue = formatWithCommas(value);
+
+    // Apply the formatted value back to the input field
+    inputElem.value = formattedValue;
+
+    // Re-adjust the cursor position after formatting (compensate for comma insertion)
+    const diff = formattedValue.length - value.length;
+    inputElem.selectionStart = inputElem.selectionEnd = cursorPosition + diff;
+}
+
+// Show Interest Fields functionality
+document.addEventListener("DOMContentLoaded", function() {
+            const yesInterest = document.getElementById('yesInterest');
+            const noInterest = document.getElementById('noInterest');
+    
+            const interestFields = document.querySelector('.showInterestFields');
+            const resultArticles = document.querySelectorAll('.toggle-interest-result');
+    
+            interestFields.style.display = 'none';
+            resultArticles.forEach(article => {
+                article.style.display = 'none';
+            });
+    
+            function toggleInterestFields() {
+                if (yesInterest.checked) {
+                    interestFields.style.display = 'grid';
+                    resultArticles.forEach(article => {
+                        article.style.display = 'grid';
+                    });
+                } else {
+                    interestFields.style.display = 'none';
+                    resultArticles.forEach(article => {
+                        article.style.display = 'none';
+                    });
+                }
+            }
+    
+            yesInterest.addEventListener('change', toggleInterestFields);
+            noInterest.addEventListener('change', toggleInterestFields);
+        });
+
+// Handle input event for comma formatting
+inputElem.addEventListener('input', handleInputEdit);
+
+// Clear button functionality to reset input field
+clearBtn.addEventListener('click', function() {
+    inputElem.value = ''; // Clear the input field
+});
+
+// Calculate and Edit Form Button Functionality
+// Repititon sighted will need optimization
+const calculateButton = document.getElementById('calculateBtn');
+const editFormBtn = document.getElementById('editFormBtn');
+const inputform = document.getElementById('inputform');
+const resultoutput = document.getElementById('resultsoutput');
+
+// Ensure the initial display states are correct (add these styles in your CSS as well)
+if (inputform.style.display !== 'flex') {
+    inputform.style.display = 'flex';  // Or set default to 'none' if needed
+}
+if (resultoutput.style.display !== 'grid') {
+    resultoutput.style.display = 'none'; // Or set default to 'none' if needed
+}
+
+// Calculate Button functionality
+// Combine the functionality of calculating and toggling form/result visibility into one function
+calculateButton.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'flex') {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    } else {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    }
+    
+    window.scrollTo(0, 0); // Scroll to the top
+
+    // Call the handleFormSubmit to handle form data and calculation
+    handleFormSubmit();
+});
+
+// Recalculate when saving frequency or interest changes
+document.querySelectorAll('input[name="savingfrequency"], input[name="interest-accountancy"]').forEach(function (radioBtn) {
+    radioBtn.addEventListener('change', function () {
+        // Recalculate the ordinary principle when saving frequency or interest changes
+        calculateOrdinaryPrinciple();
+    });
+});
+
+// Add calculateOrdinaryPrinciple directly to the calculateBtn click listener only once
+document.getElementById('calculateBtn').addEventListener('click', function () {
+    // Call the function to calculate the ordinary principle
+    calculateOrdinaryPrinciple();
+});
+
+
+// New Calculation Button functionality
+newCalculation.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'none') {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    } else {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    }
+
+    window.scrollTo(0, 0); // Scroll to the Top
+
+    // Clear Input Fields
+    const inputsforclr = inputform.querySelectorAll('input, textarea');
+    inputsforclr.forEach(input => {
+        if (input.type === 'radio' || input.type === 'checkbox') {
+            input.checked = false;
+        } else {
+            input.value = '';
+        }
+    });
+});
+
+// Edit Form Button functionality
+editFormBtn.addEventListener('click', () => {
+    // Toggle the display of the divs
+    if (inputform.style.display === 'none') {
+        inputform.style.display = 'flex';
+        resultoutput.style.display = 'none';
+    } else {
+        inputform.style.display = 'none';
+        resultoutput.style.display = 'grid';
+    }
+    window.scrollTo(0, 0); // Scroll to the Top
+    // Call handleFormSubmit to recalculate and display the updated results based on edits
+    handleFormSubmit();
+});
+
+
+//Back to Options Button Functionality
+document.getElementById('BackToOptionsBtn').addEventListener('click', function () {
+    // Redirect to index.html and scroll to the section with id="cards-section"
+    window.location.href = "index.html#cards-section";
+});
+
+//form Handling
+
+// Listen for changes to the interest inclusion radio buttons
+document.querySelectorAll('input[name="interest-accountancy"]').forEach(function (radioBtn) {
+    radioBtn.addEventListener('change', function () {
+        // Capture the selected value
+        var selectedinterest = document.querySelector('input[name="interest-accountancy"]:checked').value;
+
+        // Update the savingFrequencyAnswer text with the selected value
+        document.querySelector('.InterestInclusionAnswer').textContent = selectedinterest.charAt(0).toUpperCase() + selectedinterest.slice(1); // Capitalize the first letter
+
+        // Hide or show the article based on the selected interest accountancy option
+        const interestAccountancyNo = document.getElementById('noInterest').checked;
+
+        if (interestAccountancyNo) {
+            // Show the article if 'No' is selected
+            document.getElementById('regularAmountNoInterestArticle').style.display = 'grid';
+        } else {
+            // Hide the article if 'Yes' is selected
+            document.getElementById('regularAmountNoInterestArticle').style.display = 'none';
+        }
+
+        // Recalculate the ordinary principle when interest changes
+        calculateOrdinaryPrinciple();
+    });
+});
+
+// Listen for changes to the saving frequency radio buttons
+document.querySelectorAll('input[name="savingfrequency"]').forEach(function (radioBtn) {
+    radioBtn.addEventListener('change', function () {
+        // Capture the selected value
+        var selectedFrequency = document.querySelector('input[name="savingfrequency"]:checked').value;
+        
+        // Update the savingFrequencyAnswer text with the selected value
+        document.querySelector('.savingFrequencyAnswer').textContent = selectedFrequency.charAt(0).toUpperCase() + selectedFrequency.slice(1); // Capitalize the first letter
+
+        // Update the RegularAmount text to reflect the saving frequency
+        var regularAmountText = "How much you need to save " + selectedFrequency;  // e.g., "daily", "weekly", "monthly", etc.
+        document.querySelector('.RegularAmount').textContent = regularAmountText.charAt(0).toUpperCase() + regularAmountText.slice(1);
+        document.querySelector('.RegularAmountNoInterest').textContent = regularAmountText.charAt(0).toUpperCase() + regularAmountText.slice(1);  // Capitalize first letter
+
+        // Recalculate the ordinary principle when saving frequency changes
+        calculateOrdinaryPrinciple();
+    });
+});
+
+// Function to calculate Ordinary Principle
+function calculateOrdinaryPrinciple() {
+    // Get the target amount
+    const targetAmount = parseFloat(document.getElementById('target-amount').value.replace(',', ''));
+
+    // Get the tenure values from the user inputs
+    const daysSavingTenure = parseInt(document.getElementById('days-tenure').value) || 0;
+    const weeksSavingTenure = parseInt(document.getElementById('weeks-tenure').value) || 0;
+    const monthsSavingTenure = parseInt(document.getElementById('months-tenure').value) || 0;
+    const yearsSavingTenure = parseInt(document.getElementById('years-tenure').value) || 0;
+
+    // Get the saving frequency selected by the user
+    const savingFrequency = document.querySelector('input[name="savingfrequency"]:checked')?.value;
+
+    // Calculate total time in the unit of the saving frequency
+    let totalTimeBySavingFrequency = 0;
+
+    // Add the time values together based on the selected frequency
+    switch (savingFrequency) {
+        case 'daily':
+            totalTimeBySavingFrequency = (yearsSavingTenure * 365) + (monthsSavingTenure * 30) + (weeksSavingTenure * 7) + daysSavingTenure;
+            break;
+        case 'weekly':
+            totalTimeBySavingFrequency = (yearsSavingTenure * 52) + (monthsSavingTenure * 4.345) + weeksSavingTenure + (daysSavingTenure / 7);
+            break;
+        case 'monthly':
+            totalTimeBySavingFrequency = (yearsSavingTenure * 12) + monthsSavingTenure + (weeksSavingTenure / 4.345) + (daysSavingTenure / 30);
+            break;
+        case 'quarterly':
+            totalTimeBySavingFrequency = (yearsSavingTenure * 4) + (monthsSavingTenure / 3) + (weeksSavingTenure / 12) + (daysSavingTenure / 90);
+            break;
+        case 'semi-annually':
+            totalTimeBySavingFrequency = (yearsSavingTenure * 2) + (monthsSavingTenure / 6) + (weeksSavingTenure / 26) + (daysSavingTenure / 180);
+            break;
+        case 'annually':
+            totalTimeBySavingFrequency = yearsSavingTenure + (monthsSavingTenure / 12) + (weeksSavingTenure / 52) + (daysSavingTenure / 365);
+            break;
+        default:
+            console.error("Invalid saving frequency.");
+            return;
+    }
+
+    // Calculate ordinary principle (target amount / total time)
+    if (totalTimeBySavingFrequency > 0) {
+        const ordinaryPrinciple = targetAmount / totalTimeBySavingFrequency;
+
+        // Get the selected currency symbol
+        const currencySymbol = getCurrencySymbol();
+
+        // Format the result as currency using the selected symbol
+        const formattedOrdinaryPrinciple = formatCurrency(currencySymbol, ordinaryPrinciple.toFixed(2));
+
+        // Display the updated amount for both with and without interest
+        document.querySelector('.RegularAmountAnswerNoInterest').textContent = formattedOrdinaryPrinciple;
+
+        // Check if the interest accountancy is set to 'No'
+        const interestAccountancyNo = document.getElementById('noInterest').checked;
+
+        if (interestAccountancyNo) {
+            // Show the article if 'No' is selected
+            document.getElementById('regularAmountNoInterestArticle').style.display = 'grid';
+        } else {
+            // Hide the article if 'Yes' is selected
+            document.getElementById('regularAmountNoInterestArticle').style.display = 'none';
+        }
+
+        console.log("Ordinary Principle:", formattedOrdinaryPrinciple);
+        return ordinaryPrinciple;
+    } else {
+        console.error("Invalid tenure values.");
+        return;
+    }
+}
+
+
+// Function to calculate total time based on compounding frequency
+function calculateTotalTime(tenure, compoundingFrequency) {
+    let totalTime = 0;
+
+    switch (compoundingFrequency) {
+        case 'one-time':
+            // Convert all units to years for one-time
+            totalTime = (parseInt(tenure.days) / 365) + 
+                        (parseInt(tenure.weeks) / 52) + 
+                        (parseInt(tenure.months) / 12) + 
+                        parseInt(tenure.years);
+            break;
+        case 'daily':
+            // Convert all units to days for daily compounding
+            totalTime = (parseInt(tenure.years) * 365) + 
+                        (parseInt(tenure.months) * 30) + 
+                        (parseInt(tenure.weeks) * 7) + 
+                        parseInt(tenure.days);
+            break;
+
+        case 'weekly':
+            // Convert all units to weeks for weekly compounding
+            totalTime = (parseInt(tenure.years) * 52) + 
+                        (parseInt(tenure.months) * 4) + 
+                        parseInt(tenure.weeks) + 
+                        (parseInt(tenure.days) / 7);
+            break;
+
+        case 'monthly':
+            // Convert all units to months for monthly compounding
+            totalTime = (parseInt(tenure.years) * 12) + 
+                        parseInt(tenure.months) + 
+                        (parseInt(tenure.weeks) / 4) + 
+                        (parseInt(tenure.days) / 30);
+            break;
+        
+        case 'quarterly':
+            // Convert all units to quarters for quarterly compounding
+            totalTime = (parseInt(tenure.years) * 4) + 
+                        (parseInt(tenure.months) / 3) + 
+                        (parseInt(tenure.weeks) / 12) + 
+                        (parseInt(tenure.days) / 90);
+            break;
+        case 'semi-annually':
+            // Convert all units to semi-annual periods (half-years)
+            totalTime = (parseInt(tenure.years) * 2) + 
+                        (parseInt(tenure.months) / 6) + 
+                        (parseInt(tenure.weeks) / 24) + 
+                        (parseInt(tenure.days) / 180);
+            break;
+        case 'annually':
+            // Convert all units to years for annual compounding
+            totalTime = parseInt(tenure.years) + 
+                        (parseInt(tenure.months) / 12) + 
+                        (parseInt(tenure.weeks) / 52) + 
+                        (parseInt(tenure.days) / 365);
+            break;
+        default:
+            console.error('Unknown compounding frequency');
+            break;
+    }
+
+    return totalTime;
+}
+
+
+// Function to calculate the principle based on the selected compounding frequency
+function calculatePrinciple(targetAmount, interestRate, totalTime, compoundingFrequency) {
+    let actualRate = 0;
+
+    // Adjust actual rate based on compounding frequency using switch
+    switch (compoundingFrequency) {
+        case 'one-time':
+            actualRate = interestRate / 100; // Use existing method for one-time
+            break;
+        case 'daily':
+            actualRate = interestRate / (100 * 365); // Daily compounding
+            break;
+        case 'weekly':
+            actualRate = interestRate / (100 * 52); // Daily compounding
+            break;
+        case 'monthly':
+            actualRate = interestRate / (100 * 12); // Monthly compounding
+            break;
+        case 'quarterly':
+            actualRate = interestRate / (100 * 4); // Quarterly compounding
+            break;
+        case 'semi-annually':
+            actualRate = interestRate / (100 * 2); // Semi-annual compounding
+            break;
+        case 'annually':
+            actualRate = interestRate / 100; // Annual compounding
+            break;
+        default:
+            console.error('Unknown compounding frequency');
+            break;
+    }
+
+    // Calculate Principle using Ordinary Annuity
+    
+        return (targetAmount * actualRate) / (Math.pow(1 + actualRate, totalTime) - 1); 
+    }
+
+// Function to calculate yearly principle based on the compounding frequency. This is to simplify the logic because there are many combinations of compounding frequency and saving frequency.
+function calculateYearlyPrinciple(principle, compoundingFrequency) {
+    let yearlyMultiplier = 0;
+
+    // Determine the yearly multiplier based on compounding frequency
+    switch (compoundingFrequency) {
+        case 'daily':
+            yearlyMultiplier = 365; // Daily compounding
+            break;
+        case 'weekly':
+            yearlyMultiplier = 52; // Weekly compounding
+            break;
+        case 'monthly':
+            yearlyMultiplier = 12; // Monthly compounding
+            break;
+        case 'quarterly':
+            yearlyMultiplier = 4; // Quarterly compounding
+            break;
+        case 'semi-annually':
+            yearlyMultiplier = 2; // Semi-annually compounding
+            break;
+        case 'annually':
+            yearlyMultiplier = 1; // Annually compounding
+            break;
+        default:
+            console.error('Unknown compounding frequency');
+            break;
+    }
+
+    // Calculate yearly principle
+    const yearlyPrinciple = principle * yearlyMultiplier;
+
+    return yearlyPrinciple;
+}
+
+// Function to calculate principle at user's saving frequency
+function calculatePrincipleAtSavingFrequency(yearlyPrinciple) {
+    let savingFrequency = ''; // Initialize variable for saving frequency
+
+    // Get the selected saving frequency from the radio options
+    const savingFrequencyRadios = document.getElementsByName('savingfrequency');
+    savingFrequencyRadios.forEach((radio) => {
+        if (radio.checked) {
+            savingFrequency = radio.value;
+        }
+    });
+
+    let principleAtSavingFrequency = 0;
+
+    // Calculate the principle based on the saving frequency
+    switch (savingFrequency) {
+        case 'daily':
+            principleAtSavingFrequency = yearlyPrinciple / 365; // Daily saving frequency
+            break;
+        case 'weekly':
+            principleAtSavingFrequency = yearlyPrinciple / 52; // Weekly saving frequency
+            break;
+        case 'monthly':
+            principleAtSavingFrequency = yearlyPrinciple / 12; // Monthly saving frequency
+            break;
+        case 'quarterly':
+            principleAtSavingFrequency = yearlyPrinciple / 4; // Quarterly saving frequency
+            break;
+        case 'semi-annually':
+            principleAtSavingFrequency = yearlyPrinciple / 2; // Semi-annually saving frequency
+            break;
+        case 'annually':
+            principleAtSavingFrequency = yearlyPrinciple / 1; // Annually saving frequency
+            break;
+        default:
+            console.error('Unknown saving frequency');
+            break;
+    }
+
+    return principleAtSavingFrequency;
+}
+
+    
+// Function to format currency with commas
+function formatCurrency(currencySymbol, value) {
+    return currencySymbol + ' ' + value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// Function to calculate and show results
+function showResults(currencySymbol, purpose, targetAmount, interestRate, compoundingFrequency, tenure) {
+    // Convert to number for calculation
+    targetAmount = parseFloat(targetAmount);
+    interestRate = parseFloat(interestRate);
+
+    // Calculate the total time
+    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
+
+    // Calculate the principle using the new formula
+    const principle = calculatePrinciple(targetAmount, interestRate, totalTime, compoundingFrequency);
+
+    // Calculate Interest Earnings
+    const interestEarnings = targetAmount - (principle * totalTime);
+
+    // Convert to currency format
+    const formattedTargetAmount = formatCurrency(currencySymbol, targetAmount.toFixed(2));
+    const formattedPrinciple = formatCurrency(currencySymbol, principle.toFixed(2));
+    const formattedInterestEarnings = formatCurrency(currencySymbol, interestEarnings.toFixed(2));
+
+    // Format Tenure
+    const formattedTenure = `${tenure.years} Years, ${tenure.months} Months, ${tenure.weeks} Weeks and ${tenure.days} Days`;
+
+    // Calculate the yearly principle
+    const yearlyPrinciple = calculateYearlyPrinciple(principle, compoundingFrequency);
+
+    // Calculate the user's principle based on their saving frequency
+    const userPrinciple = calculatePrincipleAtSavingFrequency(yearlyPrinciple);
+
+    // Format user principle as currency
+    const formattedUserPrinciple = formatCurrency(currencySymbol, userPrinciple.toFixed(2));
+
+
+    // Update the form results with calculated values
+    document.querySelector('.purposeAnswer').textContent = purpose;
+    document.querySelector('.goalAnswer').textContent = formattedTargetAmount;
+    document.querySelector('.interestRateAnswer').textContent = interestRate + '%';
+    document.querySelector('.compoundingFrequencyAnswer').textContent = compoundingFrequency.charAt(0).toUpperCase() + compoundingFrequency.slice(1);
+    document.querySelector('.TenureAnswer').textContent = formattedTenure;
+    document.querySelector('.InterestEarningsAnswer').textContent = formattedInterestEarnings;
+    document.querySelector('.RegularAmountAnswer').textContent = formattedUserPrinciple;
+}
+
+// Function to get selected currency symbol
+function getCurrencySymbol() {
+    const currencySelect = document.getElementById('currency');
+    const selectedCurrencyOption = currencySelect.options[currencySelect.selectedIndex];
+    const optionText = selectedCurrencyOption.textContent.trim();
+    
+    // Split the text by hyphen and trim the symbol part
+    const symbol = optionText.split('-')[1].trim();
+    
+    return symbol;
+}
+
+// Function to get the purpose of saving
+function getPurpose() {
+    const purposeSelect = document.getElementById('purpose');
+    const customPurposeInput = document.getElementById('custom-purpose-input');
+    let purpose = purposeSelect.value;
+    
+    // If the custom option is selected, use the custom input
+    if (purpose === "custom") {
+        purpose = customPurposeInput.value || "Custom purpose not provided";
+    }
+
+    return purpose;
+}
+
+// Function to get target financial amount
+function getTargetAmount() {
+    const targetAmountInput = document.getElementById('target-amount');
+    return targetAmountInput.value.replace(/,/g, '');  // Remove commas for numeric value
+}
+
+// Function to get interest rate
+function getInterestRate() {
+    const interestRateInput = document.getElementById('interest-rate');
+    return interestRateInput.value;
+}
+
+// Function to get compounding frequency
+function getCompoundingFrequency() {
+    const compoundingRadios = document.getElementsByName('compounding');
+    let selectedCompounding = '';
+    compoundingRadios.forEach((radio) => {
+        if (radio.checked) {
+            selectedCompounding = radio.value;
+        }
+    });
+    return selectedCompounding;
+}
+
+
+// Function to get tenure (duration)
+function getTenure() {
+    const daysTenure = document.getElementById('days-tenure').value || 0;
+    const weeksTenure = document.getElementById('weeks-tenure').value || 0;
+    const monthsTenure = document.getElementById('months-tenure').value || 0;
+    const yearsTenure = document.getElementById('years-tenure').value || 0;
+
+    return {
+        days: daysTenure,
+        weeks: weeksTenure,
+        months: monthsTenure,
+        years: yearsTenure
+    };
+}
+
+// Function to handle form submission and collect values
+function handleFormSubmit() {
+    const currencySymbol = getCurrencySymbol();
+    const purpose = getPurpose();
+    const targetAmount = getTargetAmount();
+    const interestRate = getInterestRate();
+    const compoundingFrequency = getCompoundingFrequency();
+    const tenure = getTenure();
+
+    showResults(currencySymbol, purpose, targetAmount, interestRate, compoundingFrequency, tenure);
+}
+
+// Event listener for form submission
+const form = document.getElementById('present-value');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent form from submitting
+    handleFormSubmit();  // Call the function to handle form data and display results
+});
+
+
+    </script>
+        
+        
+</body>
+</html>
+
