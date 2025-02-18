@@ -855,6 +855,10 @@ footer .button:hover .inner::before {
     margin-top: 1rem;
 }
 
+.form-actions a{
+    text-decoration: none;
+}
+
 .form-actions .back-button {
     background-color: #e0e0e0;
     border-radius: 50px;
