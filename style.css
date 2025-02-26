@@ -724,10 +724,11 @@ footer .button:hover .inner::before {
     color: #707070;
 }
 
-/* Radio Buttons for Compunding Frequency and Saving Frequency */
+/* Radio Buttons for Compunding Frequency, Regular-or-Single, Saving Frequency */
 .form-field .form-input-compartment-parent .radio-compound, 
 .form-field .form-input-compartment-parent .radio-saving-frequency,
-.form-field .form-input-compartment-parent .radio-interest-accountancy{
+.form-field .form-input-compartment-parent .radio-interest-accountancy,
+.form-field .form-input-compartment-parent .radio-single-or-regular{
     display: flex;
     width: 100%;
     gap: 1.5rem;
@@ -750,13 +751,16 @@ footer .button:hover .inner::before {
 }
 
 .form-field .form-input-compartment-parent .radio-interest-accountancy .column1,
-.form-field .form-input-compartment-parent .radio-interest-accountancy .column2{
+.form-field .form-input-compartment-parent .radio-interest-accountancy .column2,
+.form-field .form-input-compartment-parent .radio-single-or-regular .column1,
+.form-field .form-input-compartment-parent .radio-single-or-regular .column2{
     width: 50%;
 }
 
 .form-field .form-input-compartment-parent .radio-compound .radio-compund-option, 
 .form-field .form-input-compartment-parent .radio-saving-frequency .radio-saving-frequency-option,
-.form-field .form-input-compartment-parent .radio-interest-accountancy .radio-interest-accountancy-option{
+.form-field .form-input-compartment-parent .radio-interest-accountancy .radio-interest-accountancy-option,
+.form-field .form-input-compartment-parent .radio-single-or-regular .radio-single-or-regular-option{
     display: flex;
     width: 100%;
     justify-content: 100%;
@@ -770,13 +774,16 @@ footer .button:hover .inner::before {
 .form-field .form-input-compartment-parent .radio-saving-frequency .radio-saving-frequency-option stylish-radio-btn, 
 .form-field .form-input-compartment-parent .radio-saving-frequency .radio-saving-frequency-option h3,
 .form-field .form-input-compartment-parent .radio-interest-accountancy .radio-interest-accountancy-option stylish-radio-btn, 
-.form-field .form-input-compartment-parent .radio-interest-accountancy .radio-interest-accountancy-option h3{
+.form-field .form-input-compartment-parent .radio-interest-accountancy .radio-interest-accountancy-option h3,
+.form-field .form-input-compartment-parent .radio-single-or-regular .radio-single-or-regular-option stylish-radio-btn, 
+.form-field .form-input-compartment-parent .radio-single-or-regular .radio-single-or-regular-option h3{
     width: 50%;
 }
 
 .form-field .form-input-compartment-parent .radio-compound h3, 
 .form-field .form-input-compartment-parent .radio-saving-frequency h3,
-.form-field .form-input-compartment-parent .radio-interest-accountancy h3{
+.form-field .form-input-compartment-parent .radio-interest-accountancy h3,
+.form-field .form-input-compartment-parent .radio-single-or-regular h3{
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.2px;
     font-size: 0.9rem;
@@ -787,7 +794,8 @@ footer .button:hover .inner::before {
 
 .form-field .form-input-compartment-parent .radio-compound .stylish-radio-btn, 
 .form-field .form-input-compartment-parent .radio-saving-frequency .stylish-radio-btn,
-.form-field .form-input-compartment-parent .radio-interest-accountancy .stylish-radio-btn{
+.form-field .form-input-compartment-parent .radio-interest-accountancy .stylish-radio-btn,
+.form-field .form-input-compartment-parent .radio-single-or-regular .stylish-radio-btn{
     background: linear-gradient(145deg, hsl(0, 0%, 99%), hsla(0, 0.00%, 69.00%, 0.82));
     border: 5.5px solid hsl(0, 0%, 84%);
     box-shadow: 10px 10px 17px hsla(0, 0.00%, 69.00%, 0.82),
@@ -799,7 +807,8 @@ footer .button:hover .inner::before {
 
 .form-field .form-input-compartment-parent .radio-compound input[type="radio"], 
 .form-field .form-input-compartment-parent .radio-saving-frequency input[type="radio"],
-.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"]{
+.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"],
+.form-field .form-input-compartment-parent .radio-single-or-regular input[type="radio"]{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -818,7 +827,8 @@ footer .button:hover .inner::before {
 
 .form-field .form-input-compartment-parent .radio-compound input[type="radio"]:checked, 
 .form-field .form-input-compartment-parent .radio-saving-frequency input[type="radio"]:checked,
-.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"]:checked{
+.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"]:checked,
+.form-field .form-input-compartment-parent .radio-single-or-regular input[type="radio"]:checked{
     background: transparent;
     box-shadow: inset 2px 2px 4px hsla(0, 0.00%, 69.00%, 0.82),
                 inset -2px -2px 4px hsl(0, 0%, 99%);
@@ -827,7 +837,8 @@ footer .button:hover .inner::before {
 
 .form-field .form-input-compartment-parent .radio-compound .stylish-radio-btn i, 
 .form-field .form-input-compartment-parent .radio-saving-frequency .stylish-radio-btn i,
-.form-field .form-input-compartment-parent .radio-interest-accountancy .stylish-radio-btn i{
+.form-field .form-input-compartment-parent .radio-interest-accountancy .stylish-radio-btn i,
+.form-field .form-input-compartment-parent .radio-single-or-regular .stylish-radio-btn i{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -842,7 +853,8 @@ footer .button:hover .inner::before {
 
 .form-field .form-input-compartment-parent .radio-compound input[type="radio"]:checked + i.fas.fa-circle, 
 .form-field .form-input-compartment-parent .radio-saving-frequency input[type="radio"]:checked + i.fas.fa-circle,
-.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"]:checked + i.fas.fa-circle{
+.form-field .form-input-compartment-parent .radio-interest-accountancy input[type="radio"]:checked + i.fas.fa-circle,
+.form-field .form-input-compartment-parent .radio-single-or-regular input[type="radio"]:checked + i.fas.fa-circle{
     opacity: 1;
 }
 
@@ -1079,6 +1091,12 @@ footer .button:hover .inner::before {
     color: #ab07b1;
     font-weight: 900;
     font-size: 1.55rem;
+}
+
+/* Initially hide the future Values */
+.RegularDepositNoInterestArticle, .OneTimeDepositCompoundInterestArticle, .OneTimeDepositOneTimeInterestArticle,
+.RegularDepositWithCompoundInterestArticle, .OneTimeDepositNoInterestArticle{
+    display: none;
 }
 
 .form-result {

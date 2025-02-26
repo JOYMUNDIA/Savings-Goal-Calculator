@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regular Amount Calculator</title>
+    <title>Future Value Calculator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -11,7 +11,7 @@
 <body>
     <div class="form-parent-container" id="inputform">
         <div class="form-container">
-            <h1>Regular Amount Calculator</h1>
+            <h1>Future Value Calculator</h1>
             <form id="present-value" method="post">
 
                 <div class="form-fields-container">
@@ -1331,29 +1331,40 @@
                     </div>
                     <!--End of Purpose of saving-->
 
-                    <!--Target Financial Amount-->
+                    <!--One time or Regular-->
                     <div class="form-field">
                         <div class="form-label-compartment-parent">
                             <div class="form-label-compartment">
-                                <h3 class="target-amount">Your Target Financial amount:</h3>
+                                <h3>Will you be making a one-time payment or regular payments?</h3>
                             </div>
                         </div>
                         <div class="form-input-compartment-parent">
-                            <div class="form-input-compartment">
-                                <div class="target-amount-container">
-
-                                    <input type="text" id="target-amount" pattern="^[0-9,]+(\.[0-9,]+?$)" inputmode="decimal" placeholder="1,000" required>
-                                    <p class="amount-disclaimer">This field will be automatically cleared if anything other than digits and a single decimal point is entered.</p>
-                                    <button id="clear-btn" class="clear-btn">Clear</button>
-                                    
+                            <div class="form-input-compartment radio-single-or-regular">
+                                <div class="column1">
+                                    <div class="radio-single-or-regular-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="oneTimePayment" name="single-or-regular" value="One-time" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="One-time">One-time</h3>
+                                    </div>
+                                </div>
+                                <div class="column2">
+                                    <div class="radio-single-or-regular-option">
+                                        <div class="stylish-radio-btn">
+                                            <input type="radio" id="RegularPayment" name="single-or-regular" value="Regular" required>
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <h3 class="Regular">Regular</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--End of Target Financial Amount-->
+                    <!--End of One time or Regular-->
 
                     <!--Saving Frequency-->
-                    <div class="form-field">
+                    <div class="form-field" id="savingFrequencySection" style="display: none;">
                         <div class="form-label-compartment-parent">
                             <div class="form-label-compartment">
                                 <h3>How frequently do you plan to save?</h3>
@@ -1412,6 +1423,28 @@
                         </div>
                     </div>
                     <!--End of Saving Frequency-->
+
+                    <!--Payment Amount-->
+                    <div class="form-field">
+                        <div class="form-label-compartment-parent">
+                            <div class="form-label-compartment">
+                                <h3 class="paymentAmount">Payment amount:</h3>
+                                <h3 class="regular-paymentAmount">How much do you plan to put aside regularly?</h3>
+                            </div>
+                        </div>
+                        <div class="form-input-compartment-parent">
+                            <div class="form-input-compartment">
+                                <div class="paymentAmount-container">
+
+                                    <input type="text" id="paymentAmount" name="paymentAmount" pattern="^[0-9,]+(\.[0-9,]+?$)" inputmode="decimal" placeholder="1,000" required>
+                                    <p class="amount-disclaimer">This field will be automatically cleared if anything other than digits and a single decimal point is entered.</p>
+                                    <button id="clear-btn" class="clear-btn">Clear</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of Payment Amount-->
 
                     <!--Factoring Interest-->
                     <div class="form-field">
@@ -1591,15 +1624,25 @@
                     <span class="form-result__name purpose">Purpose of Saving</span>
                     <span class="form-result__value purposeAnswer">Emergency Fund</span>
                 </article>
-    
-                <article class="form-result__profile">
-                    <span class="form-result__name goal">Financial Goal Amount</span>
-                    <span class="form-result__value goalAnswer">$ 1,000</span>
-                </article>
 
                 <article class="form-result__profile">
+                    <span class="form-result__name oneTimeOrRegular">One-time Payment or Regular Payments?</span>
+                    <span class="form-result__value oneTimeOrRegularAnswer">Regular</span>
+                </article>
+
+                <article class="form-result__profile savingFrequencyArticle">
                     <span class="form-result__name savingFrequency">Saving Frequency</span>
                     <span class="form-result__value savingFrequencyAnswer">Monthly</span>
+                </article>
+
+                <article class="form-result__profile paymentAmountArticle">
+                    <span class="form-result__name paymentAmount">Payment Amount</span>
+                    <span class="form-result__value RegularAmountAnswer">Monthly</span>
+                </article>
+
+                <article class="form-result__profile RegularAmountArticle">
+                    <span class="form-result__name val RegularAmount">How much you plan to save monthly</span>
+                    <span class="form-result__value RegularAmountAnswer">$ 2,000</span>
                 </article>
 
                 <article class="form-result__profile">
@@ -1621,21 +1664,57 @@
                     <span class="form-result__name compoundingFrequency">Interest Rate compounding Frequency</span>
                     <span class="form-result__value compoundingFrequencyAnswer">Monthly</span>
                 </article>
-    
-                <article class="form-result__profile toggle-interest-result">
+
+                <article class="form-result__profile toggle-interest-result" id="InterestEarningsAnswerOneTimeDepositWithOneTimeInterestArticle">
                     <span class="form-result__name InterestEarnings">Interest Amount Earned</span>
-                    <span class="form-result__value InterestEarningsAnswer">$ 40</span>
+                    <span class="form-result__value InterestEarningsAnswerOneTimeDepositWithOneTimeInterest">$ 40</span>
                 </article>
 
-                <article class="form-result__profile" id="regularAmountNoInterestArticle">
-                    <span class="form-result__name val RegularAmountNoInterest">How much you need to save monthly</span>
-                    <span class="form-result__value answer RegularAmountAnswerNoInterest">$ 2,000</span>
+                <article class="form-result__profile toggle-interest-result" id="InterestEarningsAnswerOneTimeDepositWithCompoundInterestArticle">
+                    <span class="form-result__name InterestEarnings">Interest Amount Earned</span>
+                    <span class="form-result__value InterestEarningsAnswerOneTimeDepositWithCompoundInterest">$ 40</span>
                 </article>
     
-                <article class="form-result__profile toggle-interest-result">
-                    <span class="form-result__name val RegularAmount">How much you need to save monthly</span>
-                    <span class="form-result__value answer RegularAmountAnswer">$ 2,000</span>
+                <article class="form-result__profile toggle-interest-result" id="InterestEarningsAnswerRegularDepositWithCompoundInterestArticle">
+                    <span class="form-result__name InterestEarnings">Interest Amount Earned</span>
+                    <span class="form-result__value InterestEarningsAnswerRegularDepositWithCompoundInterest">$ 40</span>
                 </article>
+
+                <article class="form-result__profile toggle-interest-result" id="InterestEarningsAnswerRegularDepositWithOneTimeInterestArticle">
+                    <span class="form-result__name InterestEarnings">Interest Amount Earned</span>
+                    <span class="form-result__value InterestEarningsAnswerRegularDepositWithOneTimeInterest">$ 40</span>
+                </article>
+
+                <article class="form-result__profile" id="OneTimeDepositNoInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer OneTimeDepositNoInterest">$ 1,000</span>
+                </article>
+                
+                <article class="form-result__profile" id="RegularDepositWithCompoundInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer RegularDepositWithCompoundInterest">$ 1,000</span>
+                </article>
+
+                <article class="form-result__profile" id="OneTimeDepositOneTimeInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer OneTimeDepositOneTimeInterest">$ 1,000</span>
+                </article>
+
+                <article class="form-result__profile" id="OneTimeDepositCompoundInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer OneTimeDepositCompoundInterest">$ 1,000</span>
+                </article>
+
+                <article class="form-result__profile" id="RegularDepositNoInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer RegularDepositNoInterest">$ 1,000</span>
+                </article>
+
+                <article class="form-result__profile" id="RegularDepositsOneTimeInterestArticle">
+                    <span class="form-result__name goal">Future Value Amount</span>
+                    <span class="form-result__value answer RegularDepositsOneTimeInterest">$ 1,000</span>
+                </article>
+    
             </main>
         </article>
         <div class="form-result-btns">
@@ -1668,7 +1747,7 @@
         // Amount Javascript
 
 // Get references to the elements
-const inputElem = document.getElementById('target-amount');
+const inputElem = document.getElementById('paymentAmount');
 const clearBtn = document.getElementById('clear-btn');
 
 // Function to add commas every 3 digits from the right
@@ -1708,6 +1787,79 @@ function handleInputEdit(event) {
     const diff = formattedValue.length - value.length;
     inputElem.selectionStart = inputElem.selectionEnd = cursorPosition + diff;
 }
+
+//Show saving frequency functionality on user's click of regular as payment option
+// Get the radio buttons for single-or-regular
+const regularPaymentRadio = document.getElementById('RegularPayment');
+const oneTimePaymentRadio = document.getElementById('oneTimePayment');
+
+// Get the saving frequency section
+const savingFrequencySection = document.getElementById('savingFrequencySection');
+
+// Function to toggle visibility of the Saving Frequency section
+function toggleSavingFrequency() {
+    if (regularPaymentRadio.checked) {
+        savingFrequencySection.style.display = 'flex';  // Show Saving Frequency
+    } else {
+        savingFrequencySection.style.display = 'none';   // Hide Saving Frequency
+    }
+}
+
+// Event listeners for when the user selects one of the payment options
+regularPaymentRadio.addEventListener('change', toggleSavingFrequency);
+oneTimePaymentRadio.addEventListener('change', toggleSavingFrequency);
+
+// Initially check the payment method and adjust the visibility of the Saving Frequency section
+toggleSavingFrequency();
+
+
+//Custom question for saving amount
+document.addEventListener('DOMContentLoaded', function () {
+    const oneTimePaymentRadio = document.getElementById('oneTimePayment');
+    const regularPaymentRadio = document.getElementById('RegularPayment');
+    const regularAmountHeading = document.querySelector('.paymentAmount');
+    const regularPaymentAmountHeading = document.querySelector('.regular-paymentAmount');
+    const savingFrequencySection = document.getElementById('savingFrequencySection');
+    const savingFrequencyRadios = document.querySelectorAll('input[name="savingfrequency"]');
+    const paymentAmountInput = document.getElementById('paymentAmount');
+
+    // Initially show "regular-amount" and hide "regular-paymentAmount"
+    regularAmountHeading.style.display = 'flex';
+    regularPaymentAmountHeading.style.display = 'none';
+
+    // Event listener for "One-time" and "Regular" selection
+    oneTimePaymentRadio.addEventListener('change', function () {
+        if (this.checked) {
+            regularAmountHeading.style.display = 'flex';
+            regularPaymentAmountHeading.style.display = 'none';
+            savingFrequencySection.style.display = 'none';  // Hide saving frequency section
+        }
+    });
+
+    regularPaymentRadio.addEventListener('change', function () {
+        if (this.checked) {
+            regularAmountHeading.style.display = 'none';
+            regularPaymentAmountHeading.style.display = 'flex';
+            savingFrequencySection.style.display = 'flex';  // Show saving frequency section
+        }
+    });
+
+    // Event listener for saving frequency selection
+    document.querySelectorAll('input[name="savingfrequency"]').forEach(function (radioBtn) {
+    radioBtn.addEventListener('change', function () {
+        // Capture the selected value
+        var selectedFrequency = document.querySelector('input[name="savingfrequency"]:checked').value;
+        
+        // Update the savingFrequencyAnswer text with the selected value
+        document.querySelector('.regular-paymentAmount').textContent = `How much do you plan to put aside ${selectedFrequency}?`;
+
+        document.querySelector('.RegularAmount').textContent = `How much do you plan to put aside ${selectedFrequency}?`;
+
+        });
+    });
+
+});
+
 
 // Show Interest Fields functionality
 document.addEventListener("DOMContentLoaded", function() {
@@ -1781,20 +1933,6 @@ calculateButton.addEventListener('click', () => {
     handleFormSubmit();
 });
 
-// Recalculate when saving frequency or interest changes
-document.querySelectorAll('input[name="savingfrequency"], input[name="interest-accountancy"]').forEach(function (radioBtn) {
-    radioBtn.addEventListener('change', function () {
-        // Recalculate the ordinary principle when saving frequency or interest changes
-        calculateOrdinaryPrinciple();
-    });
-});
-
-// Add calculateOrdinaryPrinciple directly to the calculateBtn click listener only once
-document.getElementById('calculateBtn').addEventListener('click', function () {
-    // Call the function to calculate the ordinary principle
-    calculateOrdinaryPrinciple();
-});
-
 
 // New Calculation Button functionality
 newCalculation.addEventListener('click', () => {
@@ -1842,6 +1980,61 @@ document.getElementById('BackToOptionsBtn').addEventListener('click', function (
     window.location.href = "index.html#cards-section";
 });
 
+// Record Response for payment option whether One Time or Regular
+document.querySelectorAll('input[name="single-or-regular"]').forEach(function (radioBtn) {
+    radioBtn.addEventListener('change', function () {
+        // Capture the selected value
+        var selectedinterest = document.querySelector('input[name="single-or-regular"]:checked').value;
+
+        // Update the savingFrequencyAnswer text with the selected value
+        document.querySelector('.oneTimeOrRegularAnswer').textContent = selectedinterest.charAt(0).toUpperCase() + selectedinterest.slice(1); // Capitalize the first letter
+    });
+});
+
+//To show saving frequency or not depending on the user's response for single-or-regular
+document.addEventListener('DOMContentLoaded', function () {
+    const oneTimePaymentRadio = document.getElementById('oneTimePayment');
+    const regularPaymentRadio = document.getElementById('RegularPayment');
+
+    const savingFrequencyArticle = document.querySelector('.savingFrequencyArticle');
+    const RegularAmountArticle = document.querySelector('.RegularAmountArticle');
+    const paymentAmountArticle = document.querySelector('.paymentAmountArticle');
+    
+    // Initially hide the specific articles (Saving Frequency and Regular Amount) if One-time is selected
+    if (oneTimePaymentRadio.checked) {
+        savingFrequencyArticle.style.display = 'none';
+        RegularAmountArticle.style.display = 'none';
+        paymentAmountArticle.style.display = 'grid';
+
+    } else {
+        savingFrequencyArticle.style.display = 'grid';
+        RegularAmountArticle.style.display = 'grid';
+        paymentAmountArticle.style.display = 'none';
+        
+    }
+
+    // Event listener for "One-time" selection
+    oneTimePaymentRadio.addEventListener('change', function () {
+        if (this.checked) {
+            // Hide the articles when "One-time" is selected
+            savingFrequencyArticle.style.display = 'none';
+            RegularAmountArticle.style.display = 'none';
+            paymentAmountArticle.style.display = 'grid';
+        }
+    });
+
+    // Event listener for "Regular" selection
+    regularPaymentRadio.addEventListener('change', function () {
+        if (this.checked) {
+            // Show the articles when "Regular" is selected
+            savingFrequencyArticle.style.display = 'grid';
+            RegularAmountArticle.style.display = 'grid';
+            paymentAmountArticle.style.display = 'none';
+        }
+    });
+});
+
+
 //form Handling
 
 // Listen for changes to the interest inclusion radio buttons
@@ -1855,17 +2048,6 @@ document.querySelectorAll('input[name="interest-accountancy"]').forEach(function
 
         // Hide or show the article based on the selected interest accountancy option
         const interestAccountancyNo = document.getElementById('noInterest').checked;
-
-        if (interestAccountancyNo) {
-            // Show the article if 'No' is selected
-            document.getElementById('regularAmountNoInterestArticle').style.display = 'grid';
-        } else {
-            // Hide the article if 'Yes' is selected
-            document.getElementById('regularAmountNoInterestArticle').style.display = 'none';
-        }
-
-        // Recalculate the ordinary principle when interest changes
-        calculateOrdinaryPrinciple();
     });
 });
 
@@ -1879,88 +2061,11 @@ document.querySelectorAll('input[name="savingfrequency"]').forEach(function (rad
         document.querySelector('.savingFrequencyAnswer').textContent = selectedFrequency.charAt(0).toUpperCase() + selectedFrequency.slice(1); // Capitalize the first letter
 
         // Update the RegularAmount text to reflect the saving frequency
-        var regularAmountText = "How much you need to save " + selectedFrequency;  // e.g., "daily", "weekly", "monthly", etc.
+        var regularAmountText = "How much you plan to save " + selectedFrequency;  // e.g., "daily", "weekly", "monthly", etc.
         document.querySelector('.RegularAmount').textContent = regularAmountText.charAt(0).toUpperCase() + regularAmountText.slice(1);
-        document.querySelector('.RegularAmountNoInterest').textContent = regularAmountText.charAt(0).toUpperCase() + regularAmountText.slice(1);  // Capitalize first letter
-
-        // Recalculate the ordinary principle when saving frequency changes
-        calculateOrdinaryPrinciple();
     });
 });
 
-// Function to calculate Ordinary Principle
-function calculateOrdinaryPrinciple() {
-    // Get the target amount
-    const targetAmount = parseFloat(document.getElementById('target-amount').value.replace(',', ''));
-
-    // Get the tenure values from the user inputs
-    const daysSavingTenure = parseInt(document.getElementById('days-tenure').value) || 0;
-    const weeksSavingTenure = parseInt(document.getElementById('weeks-tenure').value) || 0;
-    const monthsSavingTenure = parseInt(document.getElementById('months-tenure').value) || 0;
-    const yearsSavingTenure = parseInt(document.getElementById('years-tenure').value) || 0;
-
-    // Get the saving frequency selected by the user
-    const savingFrequency = document.querySelector('input[name="savingfrequency"]:checked')?.value;
-
-    // Calculate total time in the unit of the saving frequency
-    let totalTimeBySavingFrequency = 0;
-
-    // Add the time values together based on the selected frequency
-    switch (savingFrequency) {
-        case 'daily':
-            totalTimeBySavingFrequency = (yearsSavingTenure * 365) + (monthsSavingTenure * 30) + (weeksSavingTenure * 7) + daysSavingTenure;
-            break;
-        case 'weekly':
-            totalTimeBySavingFrequency = (yearsSavingTenure * 52) + (monthsSavingTenure * 4.345) + weeksSavingTenure + (daysSavingTenure / 7);
-            break;
-        case 'monthly':
-            totalTimeBySavingFrequency = (yearsSavingTenure * 12) + monthsSavingTenure + (weeksSavingTenure / 4.345) + (daysSavingTenure / 30);
-            break;
-        case 'quarterly':
-            totalTimeBySavingFrequency = (yearsSavingTenure * 4) + (monthsSavingTenure / 3) + (weeksSavingTenure / 12) + (daysSavingTenure / 90);
-            break;
-        case 'semi-annually':
-            totalTimeBySavingFrequency = (yearsSavingTenure * 2) + (monthsSavingTenure / 6) + (weeksSavingTenure / 26) + (daysSavingTenure / 180);
-            break;
-        case 'annually':
-            totalTimeBySavingFrequency = yearsSavingTenure + (monthsSavingTenure / 12) + (weeksSavingTenure / 52) + (daysSavingTenure / 365);
-            break;
-        default:
-            console.error("Invalid saving frequency.");
-            return;
-    }
-
-    // Calculate ordinary principle (target amount / total time)
-    if (totalTimeBySavingFrequency > 0) {
-        const ordinaryPrinciple = targetAmount / totalTimeBySavingFrequency;
-
-        // Get the selected currency symbol
-        const currencySymbol = getCurrencySymbol();
-
-        // Format the result as currency using the selected symbol
-        const formattedOrdinaryPrinciple = formatCurrency(currencySymbol, ordinaryPrinciple.toFixed(2));
-
-        // Display the updated amount for both with and without interest
-        document.querySelector('.RegularAmountAnswerNoInterest').textContent = formattedOrdinaryPrinciple;
-
-        // Check if the interest accountancy is set to 'No'
-        const interestAccountancyNo = document.getElementById('noInterest').checked;
-
-        if (interestAccountancyNo) {
-            // Show the article if 'No' is selected
-            document.getElementById('regularAmountNoInterestArticle').style.display = 'grid';
-        } else {
-            // Hide the article if 'Yes' is selected
-            document.getElementById('regularAmountNoInterestArticle').style.display = 'none';
-        }
-
-        console.log("Ordinary Principle:", formattedOrdinaryPrinciple);
-        return ordinaryPrinciple;
-    } else {
-        console.error("Invalid tenure values.");
-        return;
-    }
-}
 
 
 // Function to calculate total time based on compounding frequency
@@ -2021,175 +2126,17 @@ function calculateTotalTime(tenure, compoundingFrequency) {
                         (parseInt(tenure.days) / 365);
             break;
         default:
-            console.error('Unknown compounding frequency');
+            //console.error('Unknown compounding frequency');
+            totalTime = 0;
             break;
     }
 
     return totalTime;
 }
 
-
-// Function to calculate the principle based on the selected compounding frequency
-function calculatePrinciple(targetAmount, interestRate, totalTime, compoundingFrequency) {
-    let actualRate = 0;
-
-    // Adjust actual rate based on compounding frequency using switch
-    switch (compoundingFrequency) {
-        case 'one-time':
-            actualRate = interestRate / 100; // Use existing method for one-time
-            break;
-        case 'daily':
-            actualRate = interestRate / (100 * 365); // Daily compounding
-            break;
-        case 'weekly':
-            actualRate = interestRate / (100 * 52); // Daily compounding
-            break;
-        case 'monthly':
-            actualRate = interestRate / (100 * 12); // Monthly compounding
-            break;
-        case 'quarterly':
-            actualRate = interestRate / (100 * 4); // Quarterly compounding
-            break;
-        case 'semi-annually':
-            actualRate = interestRate / (100 * 2); // Semi-annual compounding
-            break;
-        case 'annually':
-            actualRate = interestRate / 100; // Annual compounding
-            break;
-        default:
-            console.error('Unknown compounding frequency');
-            break;
-    }
-
-    // Calculate Principle using Ordinary Annuity
-    
-        return (targetAmount * actualRate) / (Math.pow(1 + actualRate, totalTime) - 1); 
-    }
-
-// Function to calculate yearly principle based on the compounding frequency. This is to simplify the logic because there are many combinations of compounding frequency and saving frequency.
-function calculateYearlyPrinciple(principle, compoundingFrequency) {
-    let yearlyMultiplier = 0;
-
-    // Determine the yearly multiplier based on compounding frequency
-    switch (compoundingFrequency) {
-        case 'daily':
-            yearlyMultiplier = 365; // Daily compounding
-            break;
-        case 'weekly':
-            yearlyMultiplier = 52; // Weekly compounding
-            break;
-        case 'monthly':
-            yearlyMultiplier = 12; // Monthly compounding
-            break;
-        case 'quarterly':
-            yearlyMultiplier = 4; // Quarterly compounding
-            break;
-        case 'semi-annually':
-            yearlyMultiplier = 2; // Semi-annually compounding
-            break;
-        case 'annually':
-            yearlyMultiplier = 1; // Annually compounding
-            break;
-        default:
-            console.error('Unknown compounding frequency');
-            break;
-    }
-
-    // Calculate yearly principle
-    const yearlyPrinciple = principle * yearlyMultiplier;
-
-    return yearlyPrinciple;
-}
-
-// Function to calculate principle at user's saving frequency
-function calculatePrincipleAtSavingFrequency(yearlyPrinciple) {
-    let savingFrequency = ''; // Initialize variable for saving frequency
-
-    // Get the selected saving frequency from the radio options
-    const savingFrequencyRadios = document.getElementsByName('savingfrequency');
-    savingFrequencyRadios.forEach((radio) => {
-        if (radio.checked) {
-            savingFrequency = radio.value;
-        }
-    });
-
-    let principleAtSavingFrequency = 0;
-
-    // Calculate the principle based on the saving frequency
-    switch (savingFrequency) {
-        case 'daily':
-            principleAtSavingFrequency = yearlyPrinciple / 365; // Daily saving frequency
-            break;
-        case 'weekly':
-            principleAtSavingFrequency = yearlyPrinciple / 52; // Weekly saving frequency
-            break;
-        case 'monthly':
-            principleAtSavingFrequency = yearlyPrinciple / 12; // Monthly saving frequency
-            break;
-        case 'quarterly':
-            principleAtSavingFrequency = yearlyPrinciple / 4; // Quarterly saving frequency
-            break;
-        case 'semi-annually':
-            principleAtSavingFrequency = yearlyPrinciple / 2; // Semi-annually saving frequency
-            break;
-        case 'annually':
-            principleAtSavingFrequency = yearlyPrinciple / 1; // Annually saving frequency
-            break;
-        default:
-            console.error('Unknown saving frequency');
-            break;
-    }
-
-    return principleAtSavingFrequency;
-}
-
-    
 // Function to format currency with commas
 function formatCurrency(currencySymbol, value) {
     return currencySymbol + ' ' + value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
-// Function to calculate and show results
-function showResults(currencySymbol, purpose, targetAmount, interestRate, compoundingFrequency, tenure) {
-    // Convert to number for calculation
-    targetAmount = parseFloat(targetAmount);
-    interestRate = parseFloat(interestRate);
-
-    // Calculate the total time
-    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
-
-    // Calculate the principle using the new formula
-    const principle = calculatePrinciple(targetAmount, interestRate, totalTime, compoundingFrequency);
-
-    // Calculate Interest Earnings
-    const interestEarnings = targetAmount - (principle * totalTime);
-
-    // Convert to currency format
-    const formattedTargetAmount = formatCurrency(currencySymbol, targetAmount.toFixed(2));
-    const formattedPrinciple = formatCurrency(currencySymbol, principle.toFixed(2));
-    const formattedInterestEarnings = formatCurrency(currencySymbol, interestEarnings.toFixed(2));
-
-    // Format Tenure
-    const formattedTenure = `${tenure.years} Years, ${tenure.months} Months, ${tenure.weeks} Weeks and ${tenure.days} Days`;
-
-    // Calculate the yearly principle
-    const yearlyPrinciple = calculateYearlyPrinciple(principle, compoundingFrequency);
-
-    // Calculate the user's principle based on their saving frequency
-    const userPrinciple = calculatePrincipleAtSavingFrequency(yearlyPrinciple);
-
-    // Format user principle as currency
-    const formattedUserPrinciple = formatCurrency(currencySymbol, userPrinciple.toFixed(2));
-
-
-    // Update the form results with calculated values
-    document.querySelector('.purposeAnswer').textContent = purpose;
-    document.querySelector('.goalAnswer').textContent = formattedTargetAmount;
-    document.querySelector('.interestRateAnswer').textContent = interestRate + '%';
-    document.querySelector('.compoundingFrequencyAnswer').textContent = compoundingFrequency.charAt(0).toUpperCase() + compoundingFrequency.slice(1);
-    document.querySelector('.TenureAnswer').textContent = formattedTenure;
-    document.querySelector('.InterestEarningsAnswer').textContent = formattedInterestEarnings;
-    document.querySelector('.RegularAmountAnswer').textContent = formattedUserPrinciple;
 }
 
 // Function to get selected currency symbol
@@ -2204,13 +2151,13 @@ function getCurrencySymbol() {
     return symbol;
 }
 
-// Function to get the purpose of saving
+// Function to get purpose of saving
 function getPurpose() {
     const purposeSelect = document.getElementById('purpose');
     const customPurposeInput = document.getElementById('custom-purpose-input');
     let purpose = purposeSelect.value;
     
-    // If the custom option is selected, use the custom input
+    // If custom option is selected, use custom input
     if (purpose === "custom") {
         purpose = customPurposeInput.value || "Custom purpose not provided";
     }
@@ -2218,10 +2165,10 @@ function getPurpose() {
     return purpose;
 }
 
-// Function to get target financial amount
-function getTargetAmount() {
-    const targetAmountInput = document.getElementById('target-amount');
-    return targetAmountInput.value.replace(/,/g, '');  // Remove commas for numeric value
+// Function to get payment amount
+function getpaymentAmount() {
+    const paymentAmountInput = document.getElementById('paymentAmount');
+    return parseFloat(paymentAmountInput.value.replace(/,/g, ''));  // Remove commas and convert to number
 }
 
 // Function to get interest rate
@@ -2232,7 +2179,7 @@ function getInterestRate() {
 
 // Function to get compounding frequency
 function getCompoundingFrequency() {
-    const compoundingRadios = document.getElementsByName('compounding');
+    const compoundingRadios = Array.from(document.getElementsByName('compounding'));
     let selectedCompounding = '';
     compoundingRadios.forEach((radio) => {
         if (radio.checked) {
@@ -2242,13 +2189,26 @@ function getCompoundingFrequency() {
     return selectedCompounding;
 }
 
+// Function to get saving frequency
+function getSavingFrequency() {
+    const savingfrequencyRadios = Array.from(document.getElementsByName('savingfrequency'));
+    let selectedsavingfrequency = '';
+    savingfrequencyRadios.forEach((radio) => {
+        if (radio.checked) {
+            selectedsavingfrequency = radio.value;
+        }
+    });
+    return selectedsavingfrequency;
+}
+
 
 // Function to get tenure (duration)
 function getTenure() {
-    const daysTenure = document.getElementById('days-tenure').value || 0;
-    const weeksTenure = document.getElementById('weeks-tenure').value || 0;
-    const monthsTenure = document.getElementById('months-tenure').value || 0;
-    const yearsTenure = document.getElementById('years-tenure').value || 0;
+    const daysTenure = parseInt(document.getElementById('days-tenure').value) || 0;
+    const weeksTenure = parseInt(document.getElementById('weeks-tenure').value) || 0;
+    const monthsTenure = parseInt(document.getElementById('months-tenure').value) || 0;
+    const yearsTenure = parseInt(document.getElementById('years-tenure').value) || 0;
+
 
     return {
         days: daysTenure,
@@ -2258,16 +2218,501 @@ function getTenure() {
     };
 }
 
+
+//Future Value Calculations
+
+// Function to calculate future value for one-time deposit with no interest
+function calculateOneTimeDepositNoInterest(paymentAmount) {
+    OneTimeDepositNoInterestfutureValue = parseFloat(paymentAmount);  // No interest, future Value is just the principal
+    return OneTimeDepositNoInterestfutureValue;
+}
+
+
+/// Function to calculate future value for regular deposit with interest compounded with other frequencies
+function calculateRegularDepositWithCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate, savingFrequency) {
+    let yearlyPaymentAmount = 0;
+    switch (savingFrequency) {
+        case 'daily':
+            yearlyPaymentAmount = paymentAmount * 365;
+            break;
+        case 'weekly':
+            yearlyPaymentAmount = paymentAmount * 52;
+            break;
+        case 'monthly':
+            yearlyPaymentAmount = paymentAmount * 12;
+            break;
+        case 'quarterly':
+            yearlyPaymentAmount = paymentAmount * 4;
+            break;
+        case 'semi-annually':
+            yearlyPaymentAmount = paymentAmount * 2;
+            break;
+        case 'annually':
+            yearlyPaymentAmount = paymentAmount * 1;
+            break;
+        default:
+            //console.error("Invalid saving frequency.");
+            yearlyPaymentAmount = paymentAmount * 1;
+            return;
+    }
+
+    // Convert yearly payment amount to principle based on compounding frequency
+    let principlePaymentAmount = 0;
+    switch (compoundingFrequency) {
+        case 'daily':
+            principlePaymentAmount = yearlyPaymentAmount / 365;
+            break;
+        case 'weekly':
+            principlePaymentAmount = yearlyPaymentAmount / 52;
+            break;
+        case 'monthly':
+            principlePaymentAmount = yearlyPaymentAmount / 12;
+            break;
+        case 'quarterly':
+            principlePaymentAmount = yearlyPaymentAmount / 4;
+            break;
+        case 'semi-annually':
+            principlePaymentAmount = yearlyPaymentAmount / 2;
+            break;
+        case 'annually':
+            principlePaymentAmount = yearlyPaymentAmount / 1;
+            break;
+        default:
+            //console.error("Invalid compounding frequency.");
+            principlePaymentAmount = yearlyPaymentAmount / 1;
+            return;
+    }
+
+    // Calculate the actual rate per period based on the compounding frequency
+    let actualRate = 0;
+    switch (compoundingFrequency) {
+        case 'daily':
+            actualRate = interestRate / (100 * 365); // Daily compounding
+            break;
+        case 'weekly':
+            actualRate = interestRate / (100 * 52); // Weekly compounding
+            break;
+        case 'monthly':
+            actualRate = interestRate / (100 * 12); // Monthly compounding
+            break;
+        case 'quarterly':
+            actualRate = interestRate / (100 * 4); // Quarterly compounding
+            break;
+        case 'semi-annually':
+            actualRate = interestRate / (100 * 2); // Semi-annual compounding
+            break;
+        case 'annually':
+            actualRate = interestRate / 100; // Annual compounding
+            break;
+        default:
+            //console.error('Unknown compounding frequency');
+            actualRate = interestRate / 100;
+            return;
+    }
+
+    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
+    RegularDepositWithCompoundInterestfutureValue = principlePaymentAmount * (((Math.pow(1 + actualRate, totalTime)) - 1) / actualRate);
+    return RegularDepositWithCompoundInterestfutureValue;
+}
+
+
+// Function to calculate future value for one-time deposit with one-time interest
+function calculateOneTimeDepositOneTimeInterest(paymentAmount, tenure, compoundingFrequency, interestRate) {
+    let actualRate = 0;
+
+    switch (compoundingFrequency) {
+        case 'one-time':
+            actualRate = interestRate / 100; // Use existing method for one-time
+            break;
+        case 'daily':
+            actualRate = interestRate / (100 * 365); // Daily compounding
+            break;
+        case 'weekly':
+            actualRate = interestRate / (100 * 52); // Weekly compounding
+            break;
+        case 'monthly':
+            actualRate = interestRate / (100 * 12); // Monthly compounding
+            break;
+        case 'quarterly':
+            actualRate = interestRate / (100 * 4); // Quarterly compounding
+            break;
+        case 'semi-annually':
+            actualRate = interestRate / (100 * 2); // Semi-annual compounding
+            break;
+        case 'annually':
+            actualRate = interestRate / 100; // Annual compounding
+            break;
+        default:
+            //console.error('Unknown compounding frequency');
+            actualRate = interestRate / 100;
+            break;
+    }
+
+    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
+    OneTimeDepositOneTimeInterestfutureValue = parseFloat(paymentAmount) + (parseFloat(paymentAmount) * actualRate * totalTime);
+    return OneTimeDepositOneTimeInterestfutureValue;
+}
+
+
+// Function to calculate future value for one-time deposit with compound interest
+function calculateOneTimeDepositCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate) {
+    let actualRate = 0;
+
+    // Adjust actual rate based on compounding frequency using switch
+    switch (compoundingFrequency) {
+        case 'one-time':
+            actualRate = interestRate / 100; // Use existing method for one-time
+            break;
+        case 'daily':
+            actualRate = interestRate / (100 * 365); // Daily compounding
+            break;
+        case 'weekly':
+            actualRate = interestRate / (100 * 52); // Weekly compounding
+            break;
+        case 'monthly':
+            actualRate = interestRate / (100 * 12); // Monthly compounding
+            break;
+        case 'quarterly':
+            actualRate = interestRate / (100 * 4); // Quarterly compounding
+            break;
+        case 'semi-annually':
+            actualRate = interestRate / (100 * 2); // Semi-annual compounding
+            break;
+        case 'annually':
+            actualRate = interestRate / 100; // Annual compounding
+            break;
+        default:
+            //console.error('Unknown compounding frequency');
+            actualRate = interestRate / 100;
+            return;
+    }
+
+    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
+    OneTimeDepositCompoundInterestfutureValue = paymentAmount * Math.pow(1 + actualRate, totalTime);
+    return OneTimeDepositCompoundInterestfutureValue;
+}
+
+
+// Function to calculate future value for regular deposit with no interest
+function calculateRegularDepositNoInterest(paymentAmount, tenure, savingFrequency, currencySymbol) {
+    let totalTimeBySavingFrequency = 0;
+    
+    // Calculate the total time by the saving frequency
+    switch (savingFrequency) {
+        case 'daily':
+            totalTimeBySavingFrequency = (tenure.years * 365) + (tenure.months * 30) + (tenure.weeks * 7) + parseInt(tenure.days);
+            break;
+        case 'weekly':
+            totalTimeBySavingFrequency = (tenure.years * 52) + (tenure.months * 4) + parseInt(tenure.weeks) + (tenure.days / 7);
+            break;
+        case 'monthly':
+            totalTimeBySavingFrequency = (tenure.years * 12) + parseInt(tenure.months) + (tenure.weeks / 4) + (tenure.days / 30);
+            break;
+        case 'quarterly':
+            totalTimeBySavingFrequency = (tenure.years * 4) + (tenure.months / 3) + (tenure.weeks / 12) + (tenure.days / 90);
+            break;
+        case 'semi-annually':
+            totalTimeBySavingFrequency = (tenure.years * 2) + (tenure.months / 6) + (tenure.weeks / 26) + (tenure.days / 180);
+            break;
+        case 'annually':
+            totalTimeBySavingFrequency = parseInt(tenure.years) + (tenure.months / 12) + (tenure.weeks / 52) + (tenure.days / 365);
+            break;
+        default:
+            //console.error("Invalid saving frequency.");
+            totalTimeBySavingFrequency = 0;
+            return;
+    }
+
+    RegularDepositNoInterestfutureValue = paymentAmount * totalTimeBySavingFrequency;
+    return RegularDepositNoInterestfutureValue;
+}
+
+
+// Function to calculate future value for regular deposit with one-time compound interest
+function calculateRegularDepositsOneTimeInterest(paymentAmount, tenure, interestRate, savingFrequency) {
+    // Define saving frequency factor (f) based on user's saving frequency
+    let f = 0; // Saving frequency factor
+    switch (savingFrequency) {
+        case 'daily':
+            f = 365;
+            break;
+        case 'weekly':
+            f = 52;
+            break;
+        case 'monthly':
+            f = 12;
+            break;
+        case 'quarterly':
+            f = 4;
+            break;
+        case 'semi-annually':
+            f = 2;
+            break;
+        case 'annually':
+            f = 1;
+            break;
+        default:
+            //console.error('Unknown saving frequency');
+            f = 1;
+            break;
+    }
+
+    // Calculate total time in years
+    const totalTime = calculateTotalTime(tenure, 'one-time');  // Use the 'one-time' compounding frequency to calculate years.
+
+    // Calculate n = total time in years * f (saving frequency factor)
+    const n = totalTime * f;
+
+    // Calculate PMT = paymentAmount * n
+    const PMT = paymentAmount * n;
+
+    // Calculate R = interest rate / 100
+    const R = interestRate / 100;
+
+    // Calculate future value for regular deposit with one-time compound interest
+    const RegularDepositsOneTimeInterestFutureValue = PMT + (PMT * R);
+
+    return RegularDepositsOneTimeInterestFutureValue;
+}
+
+
+//Interest Calculations
+
+// Function to calculate the interest earned for one time deposits with one time interest
+function calculateOneTimeDepositOneTimeInterestInterest(paymentAmount){
+    OneTimeDepositWithOneTimeInterest = FutureValueOneTimeDepositOneTimeInterest - paymentAmount;
+    return OneTimeDepositWithOneTimeInterest;
+}
+
+// Function to calculate the interest earned for one time deposits with compound interest
+function calculateOneTimeDepositCompoundInterestInterest(paymentAmount){
+    OneTimeDepositWithCompoundInterest = FutureValueOneTimeDepositCompoundInterest - paymentAmount;
+    return OneTimeDepositWithCompoundInterest;
+}
+
+// Function to calculate the interest earned for regular deposits with compound interest
+function calculateRegularDepositWithCompoundInterestInterest(paymentAmount, tenure, savingFrequency) {
+
+    let totalTimeBySavingFrequency = 0;
+    
+    // Calculate the total time by the saving frequency
+    switch (savingFrequency) {
+        case 'daily':
+            totalTimeBySavingFrequency = (tenure.years * 365) + (tenure.months * 30) + (tenure.weeks * 7) + parseInt(tenure.days);
+            break;
+        case 'weekly':
+            totalTimeBySavingFrequency = (tenure.years * 52) + (tenure.months * 4) + parseInt(tenure.weeks) + (tenure.days / 7);
+            break;
+        case 'monthly':
+            totalTimeBySavingFrequency = (tenure.years * 12) + parseInt(tenure.months) + (tenure.weeks / 4) + (tenure.days / 30);
+            break;
+        case 'quarterly':
+            totalTimeBySavingFrequency = (tenure.years * 4) + (tenure.months / 3) + (tenure.weeks / 12) + (tenure.days / 90);
+            break;
+        case 'semi-annually':
+            totalTimeBySavingFrequency = (tenure.years * 2) + (tenure.months / 6) + (tenure.weeks / 26) + (tenure.days / 180);
+            break;
+        case 'annually':
+            totalTimeBySavingFrequency = parseInt(tenure.years) + (tenure.months / 12) + (tenure.weeks / 52) + (tenure.days / 365);
+            break;
+        default:
+            //console.error("Invalid saving frequency.");
+            totalTimeBySavingFrequency = 0;
+            return;
+    }
+    
+    // Calculate total payments (yearlyPaymentAmount * totalTime in years)
+    const totalPayments = paymentAmount * totalTimeBySavingFrequency;
+
+    // Calculate the interest earned
+    RegularDepositWithCompoundInterest = futureValueRegularDepositWithCompoundInterest - totalPayments;
+
+    return RegularDepositWithCompoundInterest;
+}
+
+// Function to calculate the interest earned for regular deposits with one time compound interest
+function calculateRegularDepositWithOneTimeInterestInterest(paymentAmount, tenure, savingFrequency) {
+
+    let totalTimeBySavingFrequency = 0;
+    
+    // Calculate the total time by the saving frequency
+    switch (savingFrequency) {
+        case 'daily':
+            totalTimeBySavingFrequency = (tenure.years * 365) + (tenure.months * 30) + (tenure.weeks * 7) + parseInt(tenure.days);
+            break;
+        case 'weekly':
+            totalTimeBySavingFrequency = (tenure.years * 52) + (tenure.months * 4) + parseInt(tenure.weeks) + (tenure.days / 7);
+            break;
+        case 'monthly':
+            totalTimeBySavingFrequency = (tenure.years * 12) + parseInt(tenure.months) + (tenure.weeks / 4) + (tenure.days / 30);
+            break;
+        case 'quarterly':
+            totalTimeBySavingFrequency = (tenure.years * 4) + (tenure.months / 3) + (tenure.weeks / 12) + (tenure.days / 90);
+            break;
+        case 'semi-annually':
+            totalTimeBySavingFrequency = (tenure.years * 2) + (tenure.months / 6) + (tenure.weeks / 26) + (tenure.days / 180);
+            break;
+        case 'annually':
+            totalTimeBySavingFrequency = parseInt(tenure.years) + (tenure.months / 12) + (tenure.weeks / 52) + (tenure.days / 365);
+            break;
+        default:
+            //console.error("Invalid saving frequency.");
+            totalTimeBySavingFrequency = 0;
+            return;
+    }
+    
+    // Calculate total payments (yearlyPaymentAmount * totalTime in years)
+    const totalPayments = paymentAmount * totalTimeBySavingFrequency;
+
+    // Calculate total time in years
+    const totalTime = calculateTotalTime(tenure, 'one-time');  // Use the 'one-time' compounding frequency to calculate years.
+
+    // Calculate the interest earned
+    RegularDepositWithOneTimeInterest = futureValueRegularDepositWithOneTimeInterest - totalPayments;
+
+    return RegularDepositWithOneTimeInterest;
+}
+
+// Function to format currency with commas
+function formatCurrency(currencySymbol, value) {
+    return currencySymbol + ' ' + value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// Function to calculate and show results
+function showResults(currencySymbol, purpose, paymentAmount, interestRate, compoundingFrequency, savingFrequency, tenure) {
+    // Convert to number for calculation
+    paymentAmount = parseFloat(paymentAmount);
+    interestRate = parseFloat(interestRate);
+
+    // Calculate the total time
+    const totalTime = calculateTotalTime(tenure, compoundingFrequency);
+
+    // Convert to currency format
+    const formattedpaymentAmount = formatCurrency(currencySymbol, paymentAmount.toFixed(2));
+
+    // Format Tenure
+    const formattedTenure = `${tenure.years} Years, ${tenure.months} Months, ${tenure.weeks} Weeks and ${tenure.days} Days`;
+
+    const singleOrRegular = document.querySelector('input[name="single-or-regular"]:checked').value;
+    const interestAccountancy = document.querySelector('input[name="interest-accountancy"]:checked').value;
+
+    // Future value calculations
+    let oneTimeDepositNoInterestFutureValue = 0;
+    let regularDepositWithCompoundInterestFutureValue = 0;
+    let oneTimeDepositOneTimeInterestFutureValue = 0;
+    let oneTimeDepositCompoundInterestFutureValue = 0;
+    let regularDepositNoInterestFutureValue = 0;
+    let RegularDepositsOneTimeInterestFutureValue = 0;
+
+    // Interest Calculations
+    let RegularDepositWithCompoundInterest = 0;
+    let RegularDepositWithOneTimeInterest = 0;
+    let OneTimeDepositWithOneTimeInterest = 0;
+    let OneTimeDepositWithCompoundInterest = 0;
+
+    // Update the form results with calculated values
+    document.querySelector('.purposeAnswer').textContent = purpose;
+    document.querySelector('.RegularAmountAnswer').textContent = formattedpaymentAmount;
+    document.querySelector('.interestRateAnswer').textContent = interestRate + '%';
+    document.querySelector('.compoundingFrequencyAnswer').textContent = compoundingFrequency.charAt(0).toUpperCase() + compoundingFrequency.slice(1);
+    document.querySelector('.TenureAnswer').textContent = formattedTenure;
+
+    // Conditional calculation for one-time deposit with no interest
+    if (singleOrRegular === "One-time" && interestAccountancy === "No") {
+        oneTimeDepositNoInterestFutureValue = calculateOneTimeDepositNoInterest(paymentAmount);
+        document.getElementById('OneTimeDepositNoInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('OneTimeDepositNoInterestArticle').style.display = 'none';
+    }
+    
+
+    // Conditional calculation for regular deposit with compound interest
+    if (singleOrRegular === "Regular" && interestAccountancy === "Yes" && compoundingFrequency !== "one-time") {
+        regularDepositWithCompoundInterestFutureValue = calculateRegularDepositWithCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate, savingFrequency);
+        futureValueRegularDepositWithCompoundInterest = calculateRegularDepositWithCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate, savingFrequency);
+        RegularDepositWithCompoundInterest = calculateRegularDepositWithCompoundInterestInterest(paymentAmount, tenure, savingFrequency);
+        document.getElementById('RegularDepositWithCompoundInterestArticle').style.display = 'grid';
+        document.getElementById('InterestEarningsAnswerRegularDepositWithCompoundInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('RegularDepositWithCompoundInterestArticle').style.display = 'none';
+        document.getElementById('InterestEarningsAnswerRegularDepositWithCompoundInterestArticle').style.display = 'none';
+    }
+
+
+    // Conditional calculation for one-time deposit with one-time interest
+    if (singleOrRegular === "One-time" && interestAccountancy === "Yes" && compoundingFrequency === "one-time") {
+        oneTimeDepositOneTimeInterestFutureValue = calculateOneTimeDepositOneTimeInterest(paymentAmount, tenure, compoundingFrequency, interestRate);
+        FutureValueOneTimeDepositOneTimeInterest = calculateOneTimeDepositOneTimeInterest(paymentAmount, tenure, compoundingFrequency, interestRate);
+        OneTimeDepositWithOneTimeInterest = calculateOneTimeDepositOneTimeInterestInterest(paymentAmount);
+        document.getElementById('OneTimeDepositOneTimeInterestArticle').style.display = 'grid';
+        document.getElementById('InterestEarningsAnswerOneTimeDepositWithOneTimeInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('OneTimeDepositOneTimeInterestArticle').style.display = 'none';
+        document.getElementById('InterestEarningsAnswerOneTimeDepositWithOneTimeInterestArticle').style.display = 'none';
+    }
+
+
+    // Conditional calculation for one-time deposit with compound interest
+    if (singleOrRegular === "One-time" && interestAccountancy === "Yes" && compoundingFrequency !== "one-time") {
+        oneTimeDepositCompoundInterestFutureValue = calculateOneTimeDepositCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate);
+        FutureValueOneTimeDepositCompoundInterest = calculateOneTimeDepositCompoundInterest(paymentAmount, tenure, compoundingFrequency, interestRate);
+        OneTimeDepositWithCompoundInterest = calculateOneTimeDepositCompoundInterestInterest(paymentAmount);
+        document.getElementById('OneTimeDepositCompoundInterestArticle').style.display = 'grid';
+        document.getElementById('InterestEarningsAnswerOneTimeDepositWithCompoundInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('OneTimeDepositCompoundInterestArticle').style.display = 'none';
+        document.getElementById('InterestEarningsAnswerOneTimeDepositWithCompoundInterestArticle').style.display = 'none';
+    }
+
+    // Conditional calculation for regular deposit with no interest
+    if (singleOrRegular === "Regular" && interestAccountancy === "No") {
+        regularDepositNoInterestFutureValue = calculateRegularDepositNoInterest(paymentAmount, tenure, savingFrequency, currencySymbol);
+        document.getElementById('RegularDepositNoInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('RegularDepositNoInterestArticle').style.display = 'none';
+    }
+
+    // Conditional calculation for regular deposit with one-time interest
+    if (singleOrRegular === "Regular" && interestAccountancy === "Yes" && compoundingFrequency === "one-time") {
+        RegularDepositsOneTimeInterestFutureValue = calculateRegularDepositsOneTimeInterest(paymentAmount, tenure, interestRate, savingFrequency);
+        futureValueRegularDepositWithOneTimeInterest = calculateRegularDepositsOneTimeInterest(paymentAmount, tenure, interestRate, savingFrequency);
+        RegularDepositWithOneTimeInterest = calculateRegularDepositWithOneTimeInterestInterest(paymentAmount, tenure, savingFrequency);
+        document.getElementById('RegularDepositsOneTimeInterestArticle').style.display = 'grid';
+        document.getElementById('InterestEarningsAnswerRegularDepositWithOneTimeInterestArticle').style.display = 'grid';
+    } else {
+        document.getElementById('RegularDepositsOneTimeInterestArticle').style.display = 'none';
+        document.getElementById('InterestEarningsAnswerRegularDepositWithOneTimeInterestArticle').style.display = 'none';
+    }
+
+    
+    // Format all the future values and display them
+    document.querySelector('.OneTimeDepositNoInterest').textContent = formatCurrency(currencySymbol, oneTimeDepositNoInterestFutureValue.toFixed(2));
+    document.querySelector('.RegularDepositWithCompoundInterest').textContent = formatCurrency(currencySymbol, regularDepositWithCompoundInterestFutureValue.toFixed(2));
+    document.querySelector('.OneTimeDepositOneTimeInterest').textContent = formatCurrency(currencySymbol, oneTimeDepositOneTimeInterestFutureValue.toFixed(2));
+    document.querySelector('.OneTimeDepositCompoundInterest').textContent = formatCurrency(currencySymbol, oneTimeDepositCompoundInterestFutureValue.toFixed(2));
+    document.querySelector('.RegularDepositNoInterest').textContent = formatCurrency(currencySymbol, regularDepositNoInterestFutureValue.toFixed(2));
+    document.querySelector('.RegularDepositsOneTimeInterest').textContent = formatCurrency(currencySymbol, RegularDepositsOneTimeInterestFutureValue.toFixed(2));
+
+    // Format interest earnings
+    document.querySelector('.InterestEarningsAnswerRegularDepositWithCompoundInterest').textContent = formatCurrency(currencySymbol, RegularDepositWithCompoundInterest.toFixed(2));
+    document.querySelector('.InterestEarningsAnswerRegularDepositWithOneTimeInterest').textContent = formatCurrency(currencySymbol, RegularDepositWithOneTimeInterest.toFixed(2));
+    document.querySelector('.InterestEarningsAnswerOneTimeDepositWithCompoundInterest').textContent = formatCurrency(currencySymbol, OneTimeDepositWithCompoundInterest.toFixed(2));
+    document.querySelector('.InterestEarningsAnswerOneTimeDepositWithOneTimeInterest').textContent = formatCurrency(currencySymbol, OneTimeDepositWithOneTimeInterest.toFixed(2));
+
+}
+
 // Function to handle form submission and collect values
 function handleFormSubmit() {
     const currencySymbol = getCurrencySymbol();
     const purpose = getPurpose();
-    const targetAmount = getTargetAmount();
+    const paymentAmount = getpaymentAmount();
     const interestRate = getInterestRate();
     const compoundingFrequency = getCompoundingFrequency();
+    const savingFrequency = getSavingFrequency();
     const tenure = getTenure();
 
-    showResults(currencySymbol, purpose, targetAmount, interestRate, compoundingFrequency, tenure);
+    showResults(currencySymbol, purpose, paymentAmount, interestRate, compoundingFrequency, savingFrequency, tenure);
+
 }
 
 // Event listener for form submission
